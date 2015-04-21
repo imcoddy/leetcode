@@ -18,6 +18,9 @@ var majorityElement = function(num) {
     for (var i=0; i < num.length; i++) {
         if (map[num[i]]) {
             map[num[i]] +=1;
+            if (map[num[i]] >= (num.length/2)) {
+                return parseInt(num[i], 10);
+            }
         }else{
             map[num[i]] = 1;
         }
