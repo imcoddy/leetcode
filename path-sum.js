@@ -30,13 +30,12 @@ Hide Tags Tree Depth-first Search
  * @param {number} sum
  * @returns {boolean}
  */
-var hasPathSum = function(root, sum) {
-    if (root) {
-        if (root.left || root.right) {
-            return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
-        }else {
-            return sum === root.val;
-        }
-    }
-    return false;
-};
+ var hasPathSum = function(root, sum) {
+     if (!root) return false;
+
+     if (!root.left && !root.right) { // check leaf
+         return sum === root.val;
+     }else { // continue DFS
+         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+     }
+ };
