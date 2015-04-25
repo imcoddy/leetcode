@@ -25,15 +25,12 @@
  * Rank: Middle
  */
 var trailingZeroes = function(n) {
-    if (n <= 0) {
+    if (n < 5) {
         return 0;
     }
     var result = 0;
     while (n) {
-//        result += Math.floor(n / 5);
-//        n = Math.floor(n / 5);
         result += (n=~~(n / 5));
-//        n = ~~(n / 5);
     }
     return result;
 };
