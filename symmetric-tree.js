@@ -64,21 +64,18 @@
  * @param {TreeNode} root
  * @returns {boolean}
  */
+
+/**
+ * Todo: Add iterative solution
+ * Runtime: 153ms
+ * Rank: S
+ */
 var isSymmetric = function(root) {
     var travelLeft = function(root, order) {
         if (root) {
             order.push(root.val);
-            if (root.left) {
-                travelLeft(root.left, order);
-            } else {
-                order.push('#');
-            }
-
-            if (root.right) {
-                travelLeft(root.right, order);
-            } else {
-                order.push('#');
-            }
+            root.left ? travelLeft(root.left, order) : order.push('#');
+            root.right ? travelLeft(root.right, order) : order.push('#');
         }
         return order;
     };
@@ -86,35 +83,15 @@ var isSymmetric = function(root) {
     var travelRight = function(root, order) {
         if (root) {
             order.push(root.val);
-            if (root.right) {
-                travelRight(root.right, order);
-            } else {
-                order.push('#');
-            }
-
-            if (root.left) {
-                travelRight(root.left, order);
-            } else {
-                order.push('#');
-            }
-
+            root.right ? travelRight(root.right, order) : order.push('#');
+            root.left ? travelRight(root.left, order) : order.push('#');
         }
         return order;
     };
 
     var leftOrders = travelLeft(root, []);
     var rightOrders = travelRight(root, []);
-    //var result = JSON.stringify(leftOrders) === JSON.stringify(rightOrders);
-
-    var i = 0;
-    var result = leftOrders[i] === rightOrders[i];
-    while (i<leftOrders.length && true) {
-        result = leftOrders[i] === rightOrders[i];
-        if (!result) {
-            break;
-        }
-        i++;
-    }
+    var result = JSON.stringify(leftOrders) === JSON.stringify(rightOrders);
 
     console.log(leftOrders);
     console.log(rightOrders);
