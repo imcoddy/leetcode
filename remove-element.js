@@ -23,52 +23,64 @@
  * Rank: B
  */
 
-var removeElement = function(A, elem) {
-    if (!A || A.length <= 0) {
-        return 0;
-    }
-
-    while (A.indexOf(elem) !== -1) {
-        var index = A.indexOf(elem);
-        A.splice(index, 1);
-    }
-    console.log(A);
-    return A.length;
-};
-
 /*
  *var removeElement = function(A, elem) {
  *    if (!A || A.length <= 0) {
  *        return 0;
  *    }
  *
- *    var tail = A.length - 1;
- *    var head = 0;
- *    var deleted = false;
- *
- *    while (head < tail) {
- *        if (A[head] === elem) {
- *            while (A[tail] === elem && head < tail) {
- *                tail--;
- *                deleted = true;
- *            }
- *            var temp = A[head];
- *            A[head] = A[tail];
- *            A[tail] = temp;
- *        }
- *        head++;
+ *    while (A.indexOf(elem) !== -1) {
+ *        var index = A.indexOf(elem);
+ *        A.splice(index, 1);
  *    }
- *    console.log(A, head, tail);
- *    return deleted ? tail - 1 : tail;
+ *    console.log(A);
+ *    return A.length;
  *};
  */
 
+/**
+ * Runtime: 171ms
+ * Rank: C
+ */
+var removeElement = function(A, elem) {
+    if (!A || A.length <= 0) {
+        return 0;
+    }
+
+    var tail = A.length - 1;
+    var head = 0;
+
+    while (head < tail) {
+        while (A[head] !== elem && head < tail) {
+            head++;
+        }
+        while (A[tail] === elem) {
+            tail--;
+        }
+        if (head < tail) {
+            var temp = A[head];
+            A[head] = A[tail];
+            A[tail] = temp;
+        }
+    }
+
+    if (A[tail] === elem) {
+        tail--;
+    }
+    //console.log(A, head, tail);
+    return tail + 1;
+};
+
+
 console.log(removeElement([2], 2)); // 0
 console.log(removeElement([2], 3)); // 1
+console.log(removeElement([3, 3], 3)); // 0
+console.log(removeElement([3, 3], 5)); // 2
 console.log(removeElement([1, 3, 1, 1, 2, 1, 1, 1], 1)); // 2
 console.log(removeElement([1, 1, 1, 1, 1, 1, 1, 1], 1)); // 0
 console.log(removeElement([2, 1, 1, 1, 1, 1, 1, 1], 1)); // 1
 console.log(removeElement([1, 1, 1, 1, 2, 2, 2, 2], 1)); // 4
 console.log(removeElement([2, 1, 1, 1, 2, 2, 2, 2], 1)); // 5
 console.log(removeElement([1, 1, 1, 1, 1, 1, 1, 2], 1)); // 1
-console.log(removeElement([2, 2, 2, 2, 2, 2, 2, 2], 1)); // 7
+console.log(removeElement([1, 1, 1, 1, 1, 1, 1, 2], 2)); // 7
+console.log(removeElement([2, 2, 2, 2, 2, 2, 2, 2], 1)); // 8
