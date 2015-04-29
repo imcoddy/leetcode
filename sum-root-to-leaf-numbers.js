@@ -44,19 +44,11 @@
  */
 var sumNumbers = function(root) {
     function DFS(root, sumOfPath) {
-        if (!root) {
-            return 0;
-        }
-
-        sumOfPath = 10 * sumOfPath + root.val;
-        if (!root.left && !root.right) {
-            // leaf node
-            return sumOfPath;
-        }
-
-        return DFS(root.left, sumOfPath) + DFS(root.right, sumOfPath);
+        if (!root) return 0; //return 0 when node doesn't exists
+        sumOfPath = 10 * sumOfPath + root.val; // sum of current path (till this node)
+        if (!root.left && !root.right) return sumOfPath; //return on leaf node
+        return DFS(root.left, sumOfPath) + DFS(root.right, sumOfPath); //keep on calculating
     }
-
     return DFS(root, 0);
 };
 
