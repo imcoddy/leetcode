@@ -37,26 +37,53 @@
  * @returns {number[]}
  */
 
+
+/**
+ * Memo: Iterative Solution
+ * Runtime: 139ms
+ * Rank: A
+ */
+var preorderTraversal2 = function(root) {
+    if (!root) {
+        return [];
+    }
+
+    var stack = [];
+    var result = [];
+
+    stack.push(root);
+    while (stack.length) {
+        var node = stack.pop();
+        result.push(node.val);
+        if (node.right) {
+            stack.push(node.right);
+        }
+        if (node.left) {
+            stack.push(node.left);
+        }
+    }
+    return result;
+};
+
 /**
  * Memo: Recursive Solution
- * TODO add iter solution
  * Runtime: 141ms
  * Rank: A
  */
 var preorderTraversal = function(root) {
-    function traversal(root, array) {
+    function traversal(root, result) {
         if (!root) {
             return;
         }
 
-        array.push(root.val);
-        traversal(root.left, array);
-        traversal(root.right, array);
+        result.push(root.val);
+        traversal(root.left, result);
+        traversal(root.right, result);
     }
 
-    var array = [];
-    traversal(root, array);
-    return array;
+    var result = [];
+    traversal(root, result);
+    return result;
 };
 
 function TreeNode(val) {
