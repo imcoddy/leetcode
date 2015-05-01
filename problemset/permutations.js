@@ -14,9 +14,9 @@
  */
 
 /**
- * @param {number[]} num
+ * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(num) {
+var permute = function(nums) {
 
 };

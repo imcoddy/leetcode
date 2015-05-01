@@ -21,7 +21,7 @@
 
 /**
  * @param {number} n
- * @returns {number[][]}
+ * @return {number[][]}
  */
 var generateMatrix = function(n) {
 

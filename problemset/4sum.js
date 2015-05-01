@@ -23,10 +23,10 @@
  */
 
 /**
- * @param {number[]} num
+ * @param {number[]} nums
  * @param {number} target
- * @returns {number[][]}
+ * @return {number[][]}
  */
-var fourSum = function(num, target) {
+var fourSum = function(nums, target) {
 
 };

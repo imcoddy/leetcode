@@ -22,9 +22,9 @@
  */
 
 /**
- * @param {number[]} num
- * @returns {number[][]} an array of number arrays with length = 3
+ * @param {number[]} nums
+ * @return {number[][]}
  */
-var threeSum = function (num) {
+var threeSum = function(nums) {
 
 };

@@ -14,9 +14,9 @@
  */
 
 /**
- * @param {number[]} num
+ * @param {number[]} nums
  * @return {number[][]}
  */
-var permuteUnique = function(num) {
+var permuteUnique = function(nums) {
 
 };

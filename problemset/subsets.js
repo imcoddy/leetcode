@@ -4,7 +4,7 @@
  * Level:   Medium
  * Title:   Subsets
  * Auther:  @imcoddy
- * Content: Given a set of distinct integers, S, return all possible subsets.
+ * Content: Given a set of distinct integers, nums, return all possible subsets.
  *
  * Note:
  *
@@ -14,7 +14,7 @@
  *
  *
  * For example,
- * If S = [1,2,3], a solution is:
+ * If nums = [1,2,3], a solution is:
  *
  *
  *
@@ -31,9 +31,9 @@
  */
 
 /**
- * @param {number[]} S
+ * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(S) {
+var subsets = function(nums) {
 
 };

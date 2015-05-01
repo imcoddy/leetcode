@@ -1,13 +1,11 @@
 /**
  * Source:  https://leetcode.com/problems/count-primes/
  * Tags:    [Hash Table,Math]
- * Level:   Easy
+ * Level:   Medium
  * Title:   Count Primes
  * Auther:  @imcoddy
  * Content: Description:
  * Count the number of prime numbers less than a non-negative number, n
- *
- * Hint: The number n could be in the order of 100,000 to 5,000,000.
  *
  * click to show more hints.
  *
