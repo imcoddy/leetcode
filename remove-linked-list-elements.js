@@ -32,8 +32,8 @@
  * Explanation: Many traps in here.
  * 1. Head could be needed to delete
  * 2. Dont move the pointer until next doesn't need to delete
- * Runtime: 209ms
- * Rank: NaN
+ * Runtime: 177ms
+ * Rank: S
  */
 var removeElements = function(head, val) {
     // remove when head is element of val
