@@ -24,7 +24,7 @@
 
 /**
  * @param {number[][]} matrix
- * @return {number[]
+ * @return {number[]}
  */
 var spiralOrder = function(matrix) {
 

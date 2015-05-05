@@ -9,16 +9,16 @@
  *
  *
  * For example,
- * Given sorted array A = [1,1,1,2,2,3],
+ * Given sorted array nums = [1,1,1,2,2,3],
  *
  *
- * Your function should return length = 5, and A is now [1,1,2,2,3].
+ * Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
  */
 
 /**
- * @param {number[]} A
+ * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(A) {
+var removeDuplicates = function(nums) {
 
 };

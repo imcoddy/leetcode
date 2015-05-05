@@ -41,16 +41,15 @@
  */
 
 /**
- * Definition for binary tree
+ * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
  *     this.left = this.right = null;
  * }
  */
-
 /**
  * @param {TreeNode} root
- * @returns {void} Do not return anything, modify nodes in-place instead.
+ * @return {void} Do not return anything, modify root in-place instead.
  */
 var flatten = function(root) {
 

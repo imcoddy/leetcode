@@ -49,16 +49,15 @@
  */
 
 /**
- * Definition for binary tree
+ * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
  *     this.left = this.right = null;
  * }
  */
-
 /**
  * @param {TreeNode} root
- * @returns {number[][]}
+ * @return {number[][]}
  */
 var levelOrderBottom = function(root) {
 

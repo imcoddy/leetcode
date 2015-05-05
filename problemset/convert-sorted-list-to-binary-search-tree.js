@@ -15,16 +15,15 @@
  * }
  */
 /**
- * Definition for binary tree
+ * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
  *     this.left = this.right = null;
  * }
  */
-
 /**
  * @param {ListNode} head
- * @returns {TreeNode}
+ * @return {TreeNode}
  */
 var sortedListToBST = function(head) {
 

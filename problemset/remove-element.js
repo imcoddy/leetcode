@@ -12,10 +12,10 @@
  */
 
 /**
- * @param {number[]} A
- * @param {number} elem
- * @returns {number}
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
  */
-var removeElement = function(A, elem) {
+var removeElement = function(nums, val) {
 
 };

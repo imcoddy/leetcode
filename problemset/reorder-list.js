@@ -22,10 +22,9 @@
  *     this.next = null;
  * }
  */
-
 /**
  * @param {ListNode} head
- * @return {void} Do not return anything, modify the linked list in-place instead.
+ * @return {void} Do not return anything, modify head in-place instead.
  */
 var reorderList = function(head) {
 

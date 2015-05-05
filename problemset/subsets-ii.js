@@ -4,7 +4,7 @@
  * Level:   Medium
  * Title:   Subsets II
  * Auther:  @imcoddy
- * Content: Given a collection of integers that might contain duplicates, S, return all possible subsets.
+ * Content: Given a collection of integers that might contain duplicates, nums, return all possible subsets.
  *
  * Note:
  *
@@ -14,7 +14,7 @@
  *
  *
  * For example,
- * If S = [1,2,2], a solution is:
+ * If nums = [1,2,2], a solution is:
  *
  *
  *
@@ -29,9 +29,9 @@
  */
 
 /**
- * @param {number[]} S
+ * @param {number[]} nums
  * @return {number[][]}
  */
-var subsetsWithDup = function(S) {
+var subsetsWithDup = function(nums) {
 
 };

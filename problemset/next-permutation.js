@@ -20,9 +20,9 @@
  */
 
 /**
- * @param {number[]} num
+ * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var nextPermutation = function(num) {
+var nextPermutation = function(nums) {
 
 };

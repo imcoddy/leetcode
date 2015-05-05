@@ -26,9 +26,9 @@
  */
 
 /**
- * @param {number[]} A
- * @return {void} Do not return anything, modify A in-place instead.
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
  */
-var sortColors = function(A) {
+var sortColors = function(nums) {
 
 };

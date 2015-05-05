@@ -26,7 +26,7 @@
 
 /**
  * @param {number[][]} obstacleGrid
- * @returns {number}
+ * @return {number}
  */
 var uniquePathsWithObstacles = function(obstacleGrid) {
 

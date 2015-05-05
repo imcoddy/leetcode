@@ -1,7 +1,7 @@
 /**
  * Source:  https://leetcode.com/problems/count-primes/
  * Tags:    [Hash Table,Math]
- * Level:   Medium
+ * Level:   Easy
  * Title:   Count Primes
  * Auther:  @imcoddy
  * Content: Description:
