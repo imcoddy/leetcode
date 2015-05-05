@@ -41,9 +41,7 @@ var simplifyPath = function(path) {
         var d = directories[i];
         if (d === '..') {
             stack.pop();
-        } else if (d === '.') {
-            // do nothing as it is current directory
-        } else if (d !== '') {
+        } else if (d !== '.' && d !== '') {
             stack.push(d);
         }
     }
