@@ -42,7 +42,9 @@ util.linkListToString = function(head) {
     if (!list) {
         return null;
     }
-    var s = list.join('->');
+    var s = list.filter(function(n) {
+        return n != undefined
+    }).join('->');
     return s;
 };
 
