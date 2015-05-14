@@ -39,14 +39,15 @@
 
 /**
  * Memo:
- * Runtime: 131ms
+ * Runtime: 123ms
  * Tests: 22 test cases passed
  * Rank: A
  */
 var reverseWords = function(str) {
     var start = 0;
     var end = 0;
-    var result = '';
+    var result = [];
+    str = str.trim();
 
     while (start < str.length) {
         while (start < str.length && str.charAt(start) === ' ') {
@@ -57,10 +58,10 @@ var reverseWords = function(str) {
             end++;
         }
         //        console.log(start, end, str.slice(start, end), str);
-        result = str.slice(start, end) + ' ' + result;
+        result.push(str.slice(start, end));
         start = end;
     }
-    return result.trim();
+    return result.reverse().join(' ');
 };
 
 /**
@@ -70,24 +71,22 @@ var reverseWords = function(str) {
  * Rank: D
  */
 
-/**
- *var reverseWords = function(str) {
- *    if (!str) {
- *        return '';
- *    }
- *    var words = str.trim().split(' ');
- *    var result = '';
- *    words.forEach(function(e) {
- *        if (e !== '') {
- *            result = e + ' ' + result;
- *        }
- *    });
- *    return result.trim();
- *};
- */
+var reverseWords = function(str) {
+    if (!str) {
+        return '';
+    }
+    var words = str.trim().split(' ');
+    var result = '';
+    words.forEach(function(e) {
+        if (e !== '') {
+            result = e + ' ' + result;
+        }
+    });
+    return result.trim();
+};
 
-//console.log(reverseWords(''));
-//console.log(reverseWords('test'));
-//console.log(reverseWords('this is a test'));
+console.log(reverseWords(''));
+console.log(reverseWords('test'));
+console.log(reverseWords('this is a test'));
 console.log(reverseWords('    this is a test       '));
-//console.log(reverseWords('     this        is           a test    '));
+console.log(reverseWords('     this        is           a test    '));

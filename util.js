@@ -14,6 +14,9 @@ function TreeNode(val) {
 }
 
 util.arrayToLinkList = function(array) {
+    if (!array) {
+        return null;
+    }
     var nodes = [];
     for (var i = 0; i < array.length; i++) {
         nodes[i] = new ListNode(array[i]);

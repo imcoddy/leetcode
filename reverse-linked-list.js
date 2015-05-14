@@ -29,7 +29,7 @@ var util = require('./util.js');
 
 /**
  * Memo:
- * Runtime: 294ms
+ * Runtime: 122ms
  * Tests: 27 test cases passed
  * Rank: NA
  */
