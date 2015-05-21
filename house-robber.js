@@ -43,6 +43,23 @@ var rob = function(nums) {
     return s[s.length - 1];
 };
 
+/**
+ * Memo: s[i] = Max(s[i-2]+nums[i], s[i-1])
+ * Complex: O(n)
+ * Runtime: 120ms
+ * Tests: 69 test cases passed
+ * Rank: A
+ */
+var rob = function(nums) {
+    if (nums.length <= 1) return nums[0] ? nums[0] : 0;
+
+    var s = [nums[0], Math.max(nums[0], nums[1])];
+    for (var i = 2; i < nums.length; i++) {
+        s[i] = Math.max(s[i - 2] + nums[i], s[i - 1]);
+    }
+    return s.pop();
+};
+
 var should = require('should');
 console.time('Runtime');
 rob([]).should.equal(0);
