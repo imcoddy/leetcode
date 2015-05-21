@@ -44,20 +44,24 @@ var rob = function(nums) {
 };
 
 /**
- * Memo: s[i] = Max(s[i-2]+nums[i], s[i-1])
+ * Memo: Use now and last to track previous result, and now = Max(last+nums[i], now).
  * Complex: O(n)
- * Runtime: 120ms
+ * Space: O(1)
+ * Runtime: 108ms
  * Tests: 69 test cases passed
- * Rank: A
+ * Rank: S
  */
 var rob = function(nums) {
     if (nums.length <= 1) return nums[0] ? nums[0] : 0;
 
-    var s = [nums[0], Math.max(nums[0], nums[1])];
+    var last = nums[0];
+    var now = Math.max(nums[0], nums[1]);
     for (var i = 2; i < nums.length; i++) {
-        s[i] = Math.max(s[i - 2] + nums[i], s[i - 1]);
+        var tmp = now;
+        now = Math.max(last + nums[i], now);
+        last = tmp;
     }
-    return s.pop();
+    return now;
 };
 
 var should = require('should');
