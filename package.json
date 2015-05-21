@@ -1,0 +1,28 @@
+{
+  "name": "leetcode-solution",
+  "version": "0.1.0",
+  "description": "my leetcode solutions, mostly written in javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/imcoddy/leetcode.git"
+  },
+  "keywords": [
+    "leetcode",
+    "algorithm",
+    "solution",
+    "javascript"
+  ],
+  "author": "imcoddy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imcoddy/leetcode/issues"
+  },
+  "homepage": "https://github.com/imcoddy/leetcode#readme",
+  "dependencies": {
+    "should": "^6.0.3"
+  }
+}

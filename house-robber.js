@@ -40,12 +40,15 @@ var rob = function(nums) {
     for (var i = 2; i < s.length; i++) {
         s[i] = Math.max(s[i - 2] + nums[i], s[i - 1]);
     }
-    console.log(s);
     return s[s.length - 1];
 };
 
-console.log(rob([]));
-console.log(rob([3]));
-console.log(rob([30, 10]));
-console.log(rob([1, 2, 3, 4, 5]));
-console.log(rob([1, 2, 3, 10, 5]));
+var should = require('should');
+console.time('Runtime');
+rob([]).should.equal(0);
+rob([3]).should.equal(3);
+rob([30, 10]).should.equal(30);
+rob([1, 2, 3, 4, 5]).should.equal(9);
+rob([1, 2, 3, 10, 5]).should.equal(12);
+
+console.timeEnd('Runtime');

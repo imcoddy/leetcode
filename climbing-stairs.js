@@ -35,3 +35,8 @@ var climbStairs = function(n) {
 console.log(climbStairs(3));
 console.log(climbStairs(4));
 console.log(climbStairs(5));
+
+var should = require('should');
+climbStairs(3).should.equal(3);
+climbStairs(4).should.equal(5);
+climbStairs(5).should.equal(8);
