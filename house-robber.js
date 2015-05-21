@@ -43,6 +43,27 @@ var rob = function(nums) {
     return s[s.length - 1];
 };
 
+/**
+ * Memo: Use now and last to track previous result, and now = Max(last+nums[i], now).
+ * Complex: O(n)
+ * Space: O(1)
+ * Runtime: 108ms
+ * Tests: 69 test cases passed
+ * Rank: S
+ */
+var rob = function(nums) {
+    if (nums.length <= 1) return nums[0] ? nums[0] : 0;
+
+    var last = nums[0];
+    var now = Math.max(nums[0], nums[1]);
+    for (var i = 2; i < nums.length; i++) {
+        var tmp = now;
+        now = Math.max(last + nums[i], now);
+        last = tmp;
+    }
+    return now;
+};
+
 var should = require('should');
 console.time('Runtime');
 rob([]).should.equal(0);
