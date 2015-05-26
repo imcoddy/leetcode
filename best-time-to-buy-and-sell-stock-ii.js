@@ -31,8 +31,42 @@ var maxProfit = function(prices) {
     return s[prices.length - 1];
 };
 
+
+/**
+ * Memo: Calculate diff and accept it when it is positive.
+ * Complex: O(n)
+ * Runtime: 128ms
+ * Tests: 198 test cases passed
+ * Rank: S
+ */
+var maxProfit = function(prices) {
+    if (prices.length <= 1) {
+        return 0;
+    }
+
+    var profit = 0;
+    for (var i = 0; i < prices.length - 1; i++) {
+        var diff = prices[i + 1] - prices[i];
+        profit += (diff > 0 ? diff : 0);
+    }
+    return profit;
+};
+
+var should = require('should');
+console.time('Runtime');
+maxProfit([]).should.equal(0);
+maxProfit([1]).should.equal(0);
+maxProfit([1, 2, 3, 4, 5, 6]).should.equal(5);
+maxProfit([6, 5, 4, 3, 2, 1]).should.equal(0);
+maxProfit([1, 3, 1, 3, 1, 3]).should.equal(6);
+maxProfit([1, 3, 1, 4, 1, 5]).should.equal(9);
+maxProfit([2, 1, 2, 0, 1]).should.equal(2);
+maxProfit([1, 3, 1, 4, 1, 2, 3, 4, 5]).should.equal(9);
+
+console.timeEnd('Runtime');
+
 console.log(maxProfit([3])); //0
-console.log(maxProfit([2, 1, 2, 0, 1])); //1
+console.log(maxProfit([2, 1, 2, 0, 1])); //2
 console.log(maxProfit([1, 2, 3, 4, 5])); //4
 console.log(maxProfit([5, 4, 3, 2, 1])); //0
 console.log(maxProfit([1, 1, 1, 1, 1])); //0
