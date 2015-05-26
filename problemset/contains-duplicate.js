@@ -1,0 +1,16 @@
+/**
+ * Source:  https://leetcode.com/problems/contains-duplicate/
+ * Tags:    [Array,Hash Table]
+ * Level:   Easy
+ * Title:   Contains Duplicate
+ * Auther:  @imcoddy
+ * Content: Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+
+};
