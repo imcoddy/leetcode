@@ -49,9 +49,9 @@ var hasPathSum = function(root, sum) {
 };
 
 /**
- * Memo:
+ * Memo: if hasPathSum(root, sum) is true, then left or right will has a pathSum values sum-root.val.
  * Complex: O(n)
- * Runtime: 164ms
+ * Runtime: 144ms
  * Tests: 114 test cases passed
  * Rank: A
  */

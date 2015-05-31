@@ -66,7 +66,7 @@
  */
 
 /**
- * Todo: Add iterative solution
+ * Memo: Traverse the tree by two approaches, leftRight or rightLeft, then see if the orders are the same or not.
  * Runtime: 153ms
  * Rank: S
  */
@@ -96,6 +96,22 @@ var isSymmetric = function(root) {
     console.log(leftOrders);
     console.log(rightOrders);
     return result;
+};
+
+/**
+ * Memo: Check left and right subtree accordingly
+ * Complex: O(n)
+ * Runtime: 148ms
+ * Tests: 192 test cases passed
+ * Rank: A
+ */
+var isSymmetric = function(root) {
+    function checkLeftRight(left, right) {
+        if (left === null || right === null) return left === right;
+        return left.val === right.val && checkLeftRight(left.left, right.right) && checkLeftRight(left.right, right.left);
+    }
+
+    return root ? checkLeftRight(root.left, root.right) : true;
 };
 
 function TreeNode(val) {
