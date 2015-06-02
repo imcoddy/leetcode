@@ -43,6 +43,21 @@ var isBalanced = function(root) {
     }
 };
 
+/**
+ * Memo: Recusive solution
+ * Complex: O(nlogn)
+ * Runtime: 180ms
+ * Tests: 226 test cases passed
+ * Rank: B
+ */
+var isBalanced = function(root) {
+    if (!root) return true;
+    if (isBalanced(root.left) && isBalanced(root.right)) {
+        return Math.abs(getDepth(root.left) - getDepth(root.right)) <= 1;
+    } else {
+        return false;
+    }
+};
 
 
 var getDepth = function(root) {

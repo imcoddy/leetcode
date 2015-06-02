@@ -52,6 +52,21 @@ var sumNumbers = function(root) {
     return DFS(root, 0);
 };
 
+/**
+ * Memo: Recusive solution from top to bottom
+ * Complex: O(n)
+ * Runtime: 120ms
+ * Tests: 109 test cases passed
+ * Rank: S
+ */
+var sumNumbers = function(root) {
+    function traverse(root, sumOfPath) {
+        if (!root) return 0;
+        sumOfPath = 10 * sumOfPath + root.val;
+        return (!root.left && !root.right) ? sumOfPath : traverse(root.left, sumOfPath) + traverse(root.right, sumOfPath);
+    }
+    return traverse(root, 0);
+};
 
 function TreeNode(val) {
     this.val = val;
@@ -66,5 +81,10 @@ root.right = node;
 
 node = new TreeNode(3);
 root.left = node;
+
+console.log(sumNumbers(root));
+
+node = new TreeNode(4);
+root.left.left = node;
 
 console.log(sumNumbers(root));

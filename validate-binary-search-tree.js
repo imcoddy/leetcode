@@ -65,6 +65,15 @@ var isValidBST = function(root) {
     return checkBST(root, 0 - Number.MAX_VALUE, Number.MAX_VALUE);
 };
 
+var isValidBST = function(root) {
+    function checkBST(root, min, max) {
+        if (!root) return true;
+        if (root.val >= max || root.val <= min) return false; //according to definition, no equal is allowed.
+        return checkBST(root.left, min, root.val) && checkBST(root.right, root.val, max);
+    }
+    return checkBST(root, -Number.MAX_VALUE, Number.MAX_VALUE);
+};
+
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;
