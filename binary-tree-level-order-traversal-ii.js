@@ -99,6 +99,40 @@ var levelOrderBottom = function(root) {
     return result;
 };
 
+/**
+ * Memo:
+ * Complex: O(n)
+ * Runtime: 148ms
+ * Tests: 34 test cases passed
+ * Rank: A
+ */
+var levelOrderBottom = function(root) {
+    if (!root) return [];
+
+    var nodes = [root];
+    var result = [];
+    var count = 1;
+    while (nodes.length) {
+        var new_count = 0;
+        var array = [];
+        for (var i = 0; i < count; i++) {
+            var node = nodes.shift();
+            array.push(node.val);
+            if (node.left) {
+                new_count++;
+                nodes.push(node.left);
+            }
+            if (node.right) {
+                new_count++;
+                nodes.push(node.right);
+            }
+        }
+        result.unshift(array);
+        count = new_count;
+    }
+    return result;
+};
+
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;
@@ -116,4 +150,4 @@ root.left = node;
 
 node = new TreeNode(4);
 root.left.left = node;
-console.log(levelOrderBottom(root));
+console.log(levelOrderBottom(root)); * /

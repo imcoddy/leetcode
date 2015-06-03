@@ -106,6 +106,62 @@ var levelOrder = function(root) {
     return result;
 };
 
+/**
+ * Memo:
+ * Complex: O(n)
+ * Runtime: 148ms
+ * Tests: 34 test cases passed
+ * Rank: A
+ */
+var levelOrder = function(root) {
+    if (!root) return [];
+
+    var nodes = [root];
+    var result = [];
+    var count = 1;
+    while (nodes.length) {
+        var new_count = 0;
+        var array = [];
+        for (var i = 0; i < count; i++) {
+            var node = nodes.shift();
+            array.push(node.val);
+            if (node.left) {
+                new_count++;
+                nodes.push(node.left);
+            }
+            if (node.right) {
+                new_count++;
+                nodes.push(node.right);
+            }
+        }
+        result.push(array);
+        count = new_count;
+    }
+    return result;
+};
+
+/**
+ * Memo: Use inorder to traverse the root recursively, record current depth and push current node.val to result of that level accordingly.
+ * Complex: O(n)
+ * Runtime: 146ms
+ * Tests: 34 test cases passed
+ * Rank: A
+ */
+var levelOrder = function(root) {
+    var result = [];
+
+    var traverse = function(root, depth) {
+        if (!root) return;
+        if (!result[depth]) result[depth] = [];
+        result[depth].push(root.val);
+        traverse(root.left, depth + 1);
+        traverse(root.right, depth + 1);
+    };
+
+    traverse(root, 0);
+    return result;
+};
+
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;
