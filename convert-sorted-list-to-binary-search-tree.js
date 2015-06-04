@@ -32,7 +32,6 @@ var util = require('./util.js');
  * Tests: 32 test cases passed
  * Rank: B
  */
-//TODO use DFS to solve this problem
 var sortedListToBST = function(head) {
     if (!head) return null;
 
@@ -66,6 +65,75 @@ var sortedListToBST = function(head) {
     return nodes[~~((nodes.length - 1) / 2)];
 };
 
+
+/**
+ * Memo: Traverse the list and put nodes in an array, then turn it into problem of sortedArrayToBST
+ * Complex: O(nlogn)
+ * Runtime: 192ms
+ * Tests: 32 test cases passed
+ * Rank: S
+ */
+var sortedListToBST = function(head) {
+    var sortedArrayToBST = function(num) {
+        function convert(start, end) {
+            var root = null;
+            if (start <= end) {
+                var mid = ~~((start + end) / 2);
+                if (typeof num[mid] !== 'undefined') {
+                    root = new TreeNode(num[mid]);
+                    root.left = convert(start, mid - 1);
+                    root.right = convert(mid + 1, end);
+                }
+            }
+            return root;
+        }
+
+        return convert(0, num.length);
+    };
+
+
+    if (!head) return null;
+
+    var nodes = [];
+    var p = head;
+    while (p) {
+        nodes.push(p.val);
+        p = p.next;
+    }
+
+    return sortedArrayToBST(nodes);
+};
+
+/**
+ * Memo: Use fast and slow pointers to find element mid, use it as root and break it into two lists (by using prev pointer), then solve it recusively.
+ * Complex: O(nlogn)
+ * Runtime: 164ms
+ * Tests: 32 test cases passed
+ * Rank: S
+ */
+var sortedListToBST = function(head) {
+    if (!head) return null;
+    if (!head.next) return new TreeNode(head.val); //Need to return new TreeNode here
+
+    var fast = head;
+    var slow = head;
+    var prev = head;
+
+    while (fast) {
+        fast = fast.next;
+        if (fast) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next;
+        }
+    }
+    prev.next = null; // break original list into two lists
+    var root = new TreeNode(slow.val);
+    root.left = sortedListToBST(head);
+    root.right = sortedListToBST(slow.next);
+    return root;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
@@ -75,5 +143,14 @@ function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;
 }
-console.log(sortedListToBST(util.arrayToLinkList([1, 2, 3, 4, 5, 6, 7, 8, 9])));
+console.log(sortedListToBST(util.arrayToLinkList([0])));
+console.log('------------------------------------');
+console.log(sortedListToBST(util.arrayToLinkList([0, 1])));
+console.log('------------------------------------');
+console.log(sortedListToBST(util.arrayToLinkList([0, 1, 2])));
+console.log('------------------------------------');
+console.log(sortedListToBST(util.arrayToLinkList([0, 1, 2, 3])));
+console.log('------------------------------------');
+console.log(sortedListToBST(util.arrayToLinkList([0, 1, 2, 3, 4, 5, 6, 7, 8])));
+console.log('------------------------------------');
 console.log(sortedListToBST(util.arrayToLinkList([-84, -83, -63, -55, -45, -41, -39, -19, -16, -12, -11, 18, 22, 28, 30, 64, 77, 94])));

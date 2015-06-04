@@ -92,6 +92,39 @@ var connect = function(root) {
     }
 };
 
+
+/**
+ * Memo: BFS to do a level traversal. Link from left to right if there are on the same level.
+ * Complex: O(n)
+ * Runtime: 176ms
+ * Tests: 14 test cases passed
+ * Rank: A
+ */
+var connect = function(root) {
+    if (!root) return;
+    var queue = [root];
+    var count = 1;
+
+    while (queue.length) {
+        var new_count = 0;
+        for (var i = 0; i < count; i++) {
+            var node = queue.shift();
+            if (i + 1 < coun) {
+                node.next = queue[0];
+            }
+            if (node.left) {
+                queue.push(node.left);
+                new_count++;
+            }
+            if (node.right) {
+                queue.push(node.right);
+                new_count++;
+            }
+        }
+        count = new_count;
+    }
+};
+
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = this.next = null;
