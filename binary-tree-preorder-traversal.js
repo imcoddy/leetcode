@@ -71,18 +71,40 @@ var preorderTraversal2 = function(root) {
  * Rank: A
  */
 var preorderTraversal = function(root) {
-    function traversal(root, result) {
+    function traverse(root, result) {
         if (!root) {
             return;
         }
 
         result.push(root.val);
-        traversal(root.left, result);
-        traversal(root.right, result);
+        traverse(root.left, result);
+        traverse(root.right, result);
     }
 
     var result = [];
-    traversal(root, result);
+    traverse(root, result);
+    return result;
+};
+
+
+/**
+ * Memo: Recursive solution
+ * Complex: O(n)
+ * Runtime: 136ms
+ * Tests: 67 test cases passed
+ * Rank: A
+ * Updated: 2015-06-06
+ */
+var preorderTraversal = function(root) {
+    function traverse(root) {
+        if (!root) return;
+
+        result.push(root.val);
+        traverse(root.left);
+        traverse(root.right);
+    }
+    var result = [];
+    traverse(root, result);
     return result;
 };
 
