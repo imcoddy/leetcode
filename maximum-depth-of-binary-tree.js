@@ -22,6 +22,30 @@
  * @param {TreeNode} root
  * @returns {number}
  */
+
+/**
+ * Memo:
+ * Complex: O(logn)
+ * Runtime: 140ms
+ * Tests: 38 test cases passed
+ * Rank: A
+ */
 var maxDepth = function(root) {
     return root ? Math.max(maxDepth(root.left), maxDepth(root.right)) + 1 : 0;
+};
+
+/**
+ * Memo:
+ * Complex: O(logn)
+ * Runtime: 160ms
+ * Tests: 38 test cases passed
+ * Rank: B
+ */
+var maxDepth = function(root) {
+    if (!root) {
+        return 0;
+    }
+    var left = maxDepth(root.left);
+    var right = maxDepth(root.right);
+    return Math.max(left, right) + 1;
 };

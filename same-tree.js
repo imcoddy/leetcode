@@ -24,6 +24,20 @@
  * @param {TreeNode} q
  * @returns {boolean}
  */
+/**
+ * Memo: compare root and children recursively.
+ * Complex: O(nlgn)
+ * Runtime: ms
+ * Tests: 54 test cases passed
+ * Rank: S
+ */
+var isSameTree = function(p, q) {
+    if ((!p && q) || (p && !q)) return false; // one is null
+    if (!p && !q) return true; // cautious both null nodes generates true
+    if (p.val !== q.val) return false; // val not equal
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right); // check children
+};
+
 var isSameTree = function(p, q) {
     if ((p && !q) || (!p && q)) {
         return false;
@@ -34,7 +48,9 @@ var isSameTree = function(p, q) {
 
     if (p.val !== q.val) {
         return false;
-    }else{
+    } else {
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 };
+
+console.log(isSameTree(null,null));
