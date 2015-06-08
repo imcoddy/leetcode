@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/shortest-palindrome/
- * Tags:    []
+ * Tags:    [String]
  * Level:   Hard
  * Title:   Shortest Palindrome
  * Auther:  @imcoddy
