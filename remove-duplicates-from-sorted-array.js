@@ -61,6 +61,35 @@ var removeDuplicates = function(A) {
     return count;
 };
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+ /**
+  * Memo: Add unique elements to a new array, and put them back to nums.
+  * Complex: O(n)
+  * Runtime: 164ms
+  * Tests: 161 test cases passed
+  * Rank: S
+  * Updated: 2015-06-15
+  */
+var removeDuplicates = function(nums) {
+    var array = [];
+    var i = 0;
+    while (i < nums.length) {
+        if (nums[i] !== array[array.length - 1]) {
+            array.push(nums[i]);
+        }
+        i++;
+    }
+
+    for (var i = 0; i < array.length; i++) {
+        nums[i] = array[i];
+    }
+    return array.length;
+};
+
 console.log(removeDuplicates([1]));
 console.log(removeDuplicates([1, 1, 1, 1]));
 console.log(removeDuplicates([1, 1, 1, 2]));
