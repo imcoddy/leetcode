@@ -74,6 +74,46 @@ var subsets = function(nums) {
     return result;
 };
 
+/**
+ * Memo: Backtracking solution
+ * Complex: O(n^n)
+ * Runtime: 144ms
+ * Tests: 10 test cases passed
+ * Rank: A
+ * Updated: 2015-06-12
+ */
+var subsets = function(nums) {
+    var result = [
+        []
+    ];
+    var subset = [];
+
+    function backTrack(index) {
+        if (index > nums.length) {
+            return;
+        } else {
+            for (var i = 0; i < nums.length; i++) {
+                subset[index] = nums[i];
+                if (isValid(index)) {
+                    result.push(subset.slice(0, index + 1));
+                    backTrack(index + 1);
+                }
+            }
+        }
+    }
+
+    function isValid(i) {
+        return i >= 1 ? subset[i] > subset[i - 1] : true;
+    }
+
+    backTrack(0);
+    return result;
+};
+
+console.time('Runtime');
+
 console.log(subsets([]));
 console.log(subsets([1]));
 console.log(subsets([1, 2, 3]));
+
+console.timeEnd('Runtime');

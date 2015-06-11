@@ -40,5 +40,45 @@ var merge = function(nums1, m, nums2, n) {
     }
 };
 
+
+/**
+ * Memo: Compare from back to front, use last as index to put the largest unsolved element.
+ * Complex: O(m+n)
+ * Runtime: 136ms
+ * Tests: 59 test cases passed
+ * Rank: S
+ * Updated: 2015-06-10
+ */
+var merge = function(nums1, m, nums2, n) {
+    var last = m + n - 1;
+    var j = n - 1;
+    var i = m - 1;
+
+    while (i >= 0 && j >= 0) {
+        nums1[last--] = nums1[i] > nums2[j] ? nums1[i--] : nums2[j--];
+    }
+
+    while (j >= 0) {
+        nums1[last--] = nums2[j--];
+    }
+};
+
+
+/**
+ * Memo: One line solution by moving m and n, better than the solution above but a bit hard to read.
+ * Complex: O(m+n)
+ * Runtime: 140ms
+ * Tests: 59 test cases passed
+ * Rank: S
+ * Updated: 2015-06-11
+ */
+var merge = function(nums1, m, nums2, n) {
+    //while (n) nums1[m + n - 1] = nums1[m - 1] > nums2[n - 1] ? nums1[--m] : nums2[--n];
+    // if m is 0, it means the array is already sorted so need to keep comparing
+    while (n) nums1[m + n - 1] = m && nums1[m - 1] > nums2[n - 1] ? nums1[--m] : nums2[--n];
+};
+
 console.log(merge([1, 3, 5, 7, 9], 5, [2, 4, 6], 3));
 console.log(merge([-10, -8, -6, -4, -2], 5, [-5, -3, -1], 3));
+console.log(merge([2, 4, 6], 3, [1, 3, 5, 7, 9], 5));
+console.log(merge([12, 14, 16], 3, [1, 3, 5, 7, 9], 5));
