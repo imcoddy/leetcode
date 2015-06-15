@@ -47,6 +47,27 @@ var generate = function(numRows) {
     return result;
 };
 
+/**
+ * Memo: Calculate from top to buttom
+ * Complex: O(n^2)
+ * Runtime: 116ms
+ * Tests: 15 test cases passed
+ * Rank: S
+ * Updated: 2015-06-14
+ */
+var generate = function(numRows) {
+    var result = [];
+    for (var i = 0; i < numRows; i++) {
+        var row = [1];
+        for (var j = 1; j <= i; j++) {
+            row[j] = result[i - 1][j - 1] + (i === j ? 0 : result[i - 1][j]);
+        }
+        result.push(row);
+    }
+
+    return result;
+};
 console.log(generate(0));
 console.log(generate(1));
+console.log(generate(3));
 console.log(generate(5));

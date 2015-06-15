@@ -67,20 +67,79 @@ var removeElement = function(A, elem) {
     if (A[tail] === elem) {
         tail--;
     }
-    //console.log(A, head, tail);
     return tail + 1;
 };
 
 
-console.log(removeElement([2], 2)); // 0
-console.log(removeElement([2], 3)); // 1
-console.log(removeElement([3, 3], 3)); // 0
-console.log(removeElement([3, 3], 5)); // 2
-console.log(removeElement([1, 3, 1, 1, 2, 1, 1, 1], 1)); // 2
-console.log(removeElement([1, 1, 1, 1, 1, 1, 1, 1], 1)); // 0
-console.log(removeElement([2, 1, 1, 1, 1, 1, 1, 1], 1)); // 1
-console.log(removeElement([1, 1, 1, 1, 2, 2, 2, 2], 1)); // 4
-console.log(removeElement([2, 1, 1, 1, 2, 2, 2, 2], 1)); // 5
-console.log(removeElement([1, 1, 1, 1, 1, 1, 1, 2], 1)); // 1
-console.log(removeElement([1, 1, 1, 1, 1, 1, 1, 2], 2)); // 7
-console.log(removeElement([2, 2, 2, 2, 2, 2, 2, 2], 1)); // 8
+/**
+ * Memo: Use Javascript API to locate the element in array and delete it.
+ * Complex: O(n)
+ * Runtime: 128ms
+ * Tests: 112 test cases passed
+ * Rank: S
+ * Updated: 2015-06-15
+ */
+var removeElement = function(nums, val) {
+    var index;
+    while ((index = nums.indexOf(val)) !== -1) {
+        nums.splice(index, 1);
+    }
+    return nums.length;
+};
+
+
+/**
+ * Shorter version of the above
+ */
+var removeElement = function(nums, val) {
+    while ((nums.indexOf(val)) !== -1) nums.splice(nums.indexOf(val), 1);
+    return nums.length;
+};
+
+
+/**
+ * Memo: Keep moving head and tail pointers until they match
+ * Complex: O(n)
+ * Runtime: 140ms
+ * Tests: 112 test cases passed
+ * Rank: B
+ * Updated: 2015-06-15
+ */
+var removeElement = function(nums, val) {
+    var head = 0;
+    var tail = nums.length;
+    while (head < tail) {
+        if (nums[head] === val) {
+            nums[head] = nums[--tail];
+        } else {
+            head++;
+        }
+    }
+    return tail;
+};
+
+/**
+ * Shorter version of the above
+ */
+var removeElement = function(nums, val) {
+    var head = 0,
+        tail = nums.length;
+    while (head < tail) nums[head] = nums[head] === val ? nums[--tail] : nums[head++];
+    return tail;
+};
+
+var should = require('should');
+console.time('Runtime');
+removeElement([2], 2).should.equal(0); // 0
+removeElement([2], 3).should.equal(1); // 1
+removeElement([3, 3], 3).should.equal(0); // 0
+removeElement([3, 3], 5).should.equal(2); // 2
+removeElement([1, 3, 1, 1, 2, 1, 1, 1], 1).should.equal(2); // 2
+removeElement([1, 1, 1, 1, 1, 1, 1, 1], 1).should.equal(0); // 0
+removeElement([2, 1, 1, 1, 1, 1, 1, 1], 1).should.equal(1); // 1
+removeElement([1, 1, 1, 1, 2, 2, 2, 2], 1).should.equal(4); // 4
+removeElement([2, 1, 1, 1, 2, 2, 2, 2], 1).should.equal(5); // 5
+removeElement([1, 1, 1, 1, 1, 1, 1, 2], 1).should.equal(1); // 1
+removeElement([1, 1, 1, 1, 1, 1, 1, 2], 2).should.equal(7); // 7
+removeElement([2, 2, 2, 2, 2, 2, 2, 2], 1).should.equal(8); // 8
+console.timeEnd('Runtime');
