@@ -45,15 +45,40 @@ var reverseList = function(head) {
     return dummy.next;
 };
 
+/**
+ * Memo:
+ * Complex: O(n)
+ * Runtime: 128ms
+ * Tests: 27 test cases passed
+ * Rank: S
+ * Updated: 2015-06-15
+ */
+var reverseList = function(head) {
+    var dummy = new ListNode(null);
+    var p = head;
+    while (p) {
+        var q = p.next;
+        p.next = dummy.next;
+        dummy.next = p;
+        p = q;
+    }
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
 }
+
+var should = require('should');
+console.time('Runtime');
+
 var list = util.arrayToLinkList([1, 2, 3, 4, 5]);
-console.log(util.linkListToString(reverseList(list)));
+util.linkListToArray(reverseList(list)).should.containDeepOrdered([5, 4, 3, 2, 1]);
 
 list = util.arrayToLinkList([]);
-console.log(util.linkListToString(reverseList(list)));
+util.linkListToArray(reverseList(list)).should.containDeepOrdered([]);
 
 list = util.arrayToLinkList([1]);
-console.log(util.linkListToString(reverseList(list)));
+util.linkListToArray(reverseList(list)).should.containDeepOrdered([1]);
+console.timeEnd('Runtime');
