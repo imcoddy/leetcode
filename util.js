@@ -60,7 +60,7 @@ util.treeToArray = function(root) {
         }
     }
 
-    while (result[result.length-1] === '#') {
+    while (result[result.length - 1] === '#') {
         result.pop();
     }
     return result;
@@ -83,14 +83,13 @@ util.arrayToLinkList = function(array) {
 };
 
 util.linkListToArray = function(head) {
-    if (!head) {
-        return null;
-    }
-    var p = head;
     var list = [];
-    while (p) {
-        list.push(p.val);
-        p = p.next;
+    if (head) {
+        var p = head;
+        while (p) {
+            list.push(p.val);
+            p = p.next;
+        }
     }
     return list;
 };
@@ -105,5 +104,11 @@ util.linkListToString = function(head) {
     }).join('->');
     return s;
 };
+
+// Shortcuts
+util.atl = util.arrayToLinkList;
+util.att = util.arrayToTree;
+util.lta = util.linkListToArray;
+util.lts = util.linkListToString;
 
 module.exports = util;

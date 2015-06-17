@@ -83,14 +83,40 @@ var insertionSortList = function(head) {
     return dummy.next;
 };
 
+/**
+ * Memo: Create a new list using dummy head, and simply append each node to that list.
+ * Complex: O(n^2)
+ * Runtime: 232ms
+ * Tests: 21 test cases passed
+ * Rank: B
+ */
+var insertionSortList = function(head) {
+    var dummy = new ListNode(null);
+    var p = head;
+    while (p) {
+        var tail = dummy;
+        while (tail.next && tail.next.val < p.val) {
+            tail = tail.next;
+        }
+        var q = p.next;
+        p.next = tail.next;
+        tail.next = p;
+        p = q;
+    }
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
 }
 
-console.log(util.linkListToString(insertionSortList(util.arrayToLinkList([]))));
-console.log(util.linkListToString(insertionSortList(util.arrayToLinkList([1]))));
-console.log(util.linkListToString(insertionSortList(util.arrayToLinkList([1, 1, 2, 2, 4]))));
-console.log(util.linkListToString(insertionSortList(util.arrayToLinkList([1, 3, 2, 5, 4]))));
+var should = require('should');
+console.time('Runtime');
 
-console.log(util.linkListToString(insertionSortList(util.arrayToLinkList([1, 20, 3, 2, 5, 4, 6, 7, 8]))));
+console.timeEnd('Runtime');
+util.lta(insertionSortList(util.atl([]))).should.eql([]);
+util.lta(insertionSortList(util.atl([1]))).should.eql([1]);
+util.lta(insertionSortList(util.atl([1, 1, 2, 2, 4]))).should.eql([1, 1, 2, 2, 4]);
+util.lta(insertionSortList(util.atl([1, 3, 2, 5, 4]))).should.eql([1, 2, 3, 4, 5]);
+util.lta(insertionSortList(util.atl([1, 20, 3, 2, 5, 4, 6, 7, 8]))).should.eql([1, 2, 3, 4, 5, 6, 7, 8, 20]);
