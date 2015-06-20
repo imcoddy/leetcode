@@ -53,8 +53,41 @@ var deleteDuplicates = function(head) {
         p = p.next;
         duplicate = false;
     }
-    
+
     tail.next = null;
+    return dummy.next;
+};
+
+
+/**
+ * Memo: Check if the element is duplicated or not. If not, append it to the list.
+ * Complex: O(n)
+ * Runtime: 164ms
+ * Tests: 166 test cases passed
+ * Rank: A
+ * Updated: 2015-06-20
+ */
+var deleteDuplicates = function(head) {
+    if (!head || !head.next) return head;
+
+    var dummy = new ListNode(null);
+    var tail = dummy;
+    var p = head;
+
+    while (p) {
+        var start = p;
+        while (p && p.next && p.next.val === p.val) {
+            p = p.next;
+        }
+        var next = p.next;
+        if (start === p) {
+            tail.next = p;
+            tail = tail.next;
+            tail.next = null;
+        }
+        p = next;
+    }
+
     return dummy.next;
 };
 
@@ -63,7 +96,8 @@ function ListNode(val) {
     this.next = null;
 }
 
-console.log(util.linkListToString(deleteDuplicates(util.arrayToLinkList([1,2,2,2]))));
+console.log(util.linkListToString(deleteDuplicates(util.arrayToLinkList([1, 1, 2, 2, 2]))));
+console.log(util.linkListToString(deleteDuplicates(util.arrayToLinkList([1, 2, 2, 2]))));
 console.log(util.linkListToString(deleteDuplicates(util.arrayToLinkList([1, 1, 1, 3, 3, 5]))));
 console.log(util.linkListToString(deleteDuplicates(util.arrayToLinkList([1, 1, 1, 3, 5]))));
 console.log(util.linkListToString(deleteDuplicates(util.arrayToLinkList([0, 1, 1, 1, 3, 5]))));

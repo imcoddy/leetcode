@@ -60,6 +60,76 @@ var mergeKLists = function(lists) {
     return dummy.next;
 };
 
+/**
+ * Memo: Treat lists as a queue and pop two lists and merge them, then append the new list until there is only one list left.
+ * Complex: O(kn^2)
+ * Runtime: 212ms
+ * Tests: 130 test cases passed
+ * Rank: S
+ * Updated: 2015-06-20
+ */
+var mergeKLists = function(lists) {
+    var mergeTwoLists = function(h1, h2) {
+        var dummy = new ListNode(null);
+        var tail = dummy;
+        while (h1 && h2) {
+            if (h1.val <= h2.val) {
+                tail = tail.next = h1;
+                h1 = h1.next;
+            } else {
+                tail = tail.next = h2;
+                h2 = h2.next;
+            }
+        }
+        tail.next = h1 ? h1 : h2;
+        return dummy.next;
+    };
+
+    if (!lists || lists.length === 0) return null;
+    while (lists.length > 1) lists.push(mergeTwoLists(lists.shift(), lists.shift()));
+    return lists[0];
+};
+
+
+/**
+ * Memo: Improve the above by moving several nodes at one time while merging, which could reduce linking
+ * Complex: O(k*n^2)
+ * Runtime: 204ms
+ * Tests: 130 test cases passed
+ * Rank: S
+ * Updated: 2015-06-20
+ */
+var mergeKLists = function(lists) {
+    var mergeTwoLists = function(l1, l2) {
+        if (!l1) return l2;
+        if (!l2) return l1;
+
+        var dummy = new ListNode(null);
+        var tail = dummy;
+        var small = l1.val <= l2.val ? l1 : l2;
+        var large = l1.val <= l2.val ? l2 : l1;
+
+        while (small && large) {
+            tail.next = small;
+            while (small.next && small.next.val <= large.val) {
+                small = small.next;
+            }
+            var smallnext = small.next;
+            tail = small;
+            tail.next = large;
+            if (small.next) {
+                large = smallnext;
+                small = tail.next;
+            }
+        }
+        return dummy.next;
+    };
+
+    if (!lists || lists.length === 0) return null;
+    while (lists.length > 1) lists.push(mergeTwoLists(lists.shift(), lists.shift()));
+    return lists[0];
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;

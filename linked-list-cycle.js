@@ -58,3 +58,74 @@ var hasCycle = function(head) {
     }
     return fast !== null;
 };
+
+/**
+ * Memo: Imporeve from above version. Return directly when there is only one node and link to itself.
+ * Complex: O(n)
+ * Runtime: 124ms
+ * Tests: 16 test cases passed
+ * Rank: S
+ * Updated: 2015-06-20
+ */
+var hasCycle = function(head) {
+    if (!head || !head.next) return false;
+    if (head.next === head) return true;
+
+    var slow = head;
+    var fast = head.next;
+    while (fast && fast !== slow) {
+        slow = slow.next;
+        fast = fast.next;
+
+        if (!fast) return false;
+        if (fast === slow) return true;
+        fast = fast.next;
+        if (!fast) return false;
+        if (fast === slow) return true;
+    }
+    return false;
+};
+
+/**
+ * Memo: Imporeve from above version. Return directly when there is only one node and link to itself.
+ * Complex: O(n)
+ * Runtime: 124ms
+ * Tests: 16 test cases passed
+ * Rank: S
+ * Updated: 2015-06-20
+ */
+var hasCycle = function(head) {
+    if (!head || !head.next) return false;
+    if (head.next === head) return true;
+
+    var slow = head;
+    var fast = head;
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (fast === slow) return true;
+    }
+    return false;
+};
+
+
+/**
+ * Memo: Mark val to NaN to indicate that this node has been visited.
+ * * The original list will be modified. and will fail if origianl list contains val of NaN
+ * Complex: O(n)
+ * Runtime: 140ms
+ * Tests: 16 test cases passed
+ * Rank: S
+ * Updated: 2015-06-20
+ */
+var hasCycle = function(head) {
+    while (head) {
+        if (isNaN(head.val)) {
+            return true;
+        } else {
+            head.val = NaN;
+            head = head.next;
+        }
+    }
+    return false;
+};

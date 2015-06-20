@@ -61,27 +61,43 @@ var swapPairs = function(head) {
     return head;
 };
 
-function printList(head) {
-    var node = head;
-    var result = [];
-    while (node) {
-        result.push(node.val);
-        node = node.next;
+
+/**
+ * Memo: Append two swapped nodes to a new list, and move pointer at two in one loop
+ * Complex: O(n)
+ * Runtime: 156ms
+ * Tests: 55 test cases passed
+ * Rank: S
+ * Updated: 2015-06-20
+ */
+var swapPairs = function(head) {
+    if (!head || !head.next) return head;
+
+    var dummy = new ListNode(null);
+    var tail = dummy;
+    var p = head;
+    while (p && p.next) {
+        var next = p.next.next;
+        tail.next = p.next;
+        tail = tail.next;
+        tail.next = p;
+        tail = tail.next;
+        p = next;
     }
-    return result;
-}
+    tail.next = p ? p : null;
+
+    return dummy.next;
+};
 
 function ListNode(val) {
     this.val = val;
     this.next = null;
 }
 
-var head = new ListNode(1);
-var node = new ListNode(2);
-head.next = node;
-node.next = new ListNode(3);
-node = node.next;
-node.next = new ListNode(4);
-node = node.next;
+var util = require("./util.js");
+var should = require('should');
+console.time('Runtime');
+(util.lta(swapPairs(util.atl([1, 2, 3, 4, 5]))).should.eql([2, 1, 4, 3, 5]));
+(util.lta(swapPairs(util.atl([1, 2, 3, 4]))).should.eql([2, 1, 4, 3]));
 
-console.log(printList(swapPairs(head)));
+console.timeEnd('Runtime');
