@@ -65,6 +65,17 @@ var reverseList = function(head) {
     return dummy.next;
 };
 
+var reverseList = function(head) {
+    var dummy = new ListNode(null);
+    while (head) {
+        var next = head.next;
+        head.next = dummy.next;
+        dummy.next = head;
+        head = next;
+    }
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
