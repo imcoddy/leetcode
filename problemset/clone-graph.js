@@ -41,6 +41,22 @@
  *     0 --- 2
  *          / \
  *          \_/
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (H) Copy List with Random Pointer
  */
 
 /**

@@ -21,6 +21,19 @@
  *
  * Update (2015-02-10):
  * The signature of the C++ function had been updated. If you still see your function signature accepts a const char * argument, please click the reload button  to reset your code definition.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) String to Integer (atoi)
  */
 
 /**

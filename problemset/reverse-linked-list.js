@@ -10,6 +10,23 @@
  *
  * Hint:
  * A linked list can be reversed either iteratively or recursively. Could you implement both?
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Reverse Linked List II
+ *
+ *                      (M) Binary Tree Upside Down
+ *
+ *                      (E) Palindrome Linked List
  */
 
 /**

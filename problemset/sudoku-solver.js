@@ -18,6 +18,19 @@
  *
  *
  * ...and its solution numbers marked in red.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Valid Sudoku
  */
 
 /**

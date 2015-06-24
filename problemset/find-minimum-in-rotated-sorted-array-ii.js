@@ -17,6 +17,18 @@
  * Find the minimum element.
  *
  * The array may contain duplicates.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Find Minimum in Rotated Sorted Array
  */
 
 /**

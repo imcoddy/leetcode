@@ -26,6 +26,20 @@
  * X X X X
  * X X X X
  * X O X X
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Number of Islands
  */
 
 /**

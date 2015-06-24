@@ -12,6 +12,18 @@
  * Given "abcd", return "dcbabcd".
  *
  * Credits:Special thanks to @ifanchu for adding this problem and creating all test cases. Thanks to @Freezen for additional test cases.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Longest Palindromic Substring
  */
 
 /**

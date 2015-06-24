@@ -5,6 +5,19 @@
  * Title:   Pow(x, n)
  * Auther:  @imcoddy
  * Content: Implement pow(x, n).
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Sqrt(x)
  */
 
 /**

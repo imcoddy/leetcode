@@ -7,6 +7,18 @@
  * Content: Implement int sqrt(int x).
  *
  * Compute and return the square root of x.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Pow(x, n)
  */
 
 /**

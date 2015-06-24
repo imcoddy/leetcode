@@ -21,6 +21,19 @@
  * For example,
  * Given height = [2,1,5,6,2,3],
  * return 10.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (H) Maximal Rectangle
  */
 
 /**

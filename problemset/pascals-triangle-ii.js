@@ -14,6 +14,19 @@
  *
  * Note:
  * Could you optimize your algorithm to use only O(k) extra space?
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Pascal's Triangle
  */
 
 /**

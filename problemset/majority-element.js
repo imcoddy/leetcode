@@ -9,6 +9,18 @@
  * You may assume that the array is non-empty and the majority element always exist in the array.
  *
  * Credits:Special thanks to @ts for adding this problem and creating all test cases.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Majority Element II
  */
 
 /**

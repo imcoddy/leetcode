@@ -1,7 +1,7 @@
 /**
  * Source:  https://leetcode.com/problems/implement-stack-using-queues/
- * Tags:    [Data Structure]
- * Level:   Medium
+ * Tags:    [Stack,Data Structure]
+ * Level:   Easy
  * Title:   Implement Stack using Queues
  * Auther:  @imcoddy
  * Content: Implement the following operations of a stack using queues.
@@ -33,6 +33,18 @@
  *
  *
  * Credits:Special thanks to @jianchao.li.fighter for adding this problem and all test cases.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Implement Queue using Stacks
  */
 
 /**

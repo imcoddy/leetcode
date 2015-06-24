@@ -11,6 +11,20 @@
  * Find the minimum element.
  *
  * You may assume no duplicate exists in the array.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (H) Search in Rotated Sorted Array
+ *
+ *                      (H) Find Minimum in Rotated Sorted Array II
  */
 
 /**

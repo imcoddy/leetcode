@@ -29,6 +29,20 @@
  *       2 -> 3 -> NULL
  *      / \    \
  *     4-> 5 -> 7 -> NULL
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Populating Next Right Pointers in Each Node
  */
 
 /**

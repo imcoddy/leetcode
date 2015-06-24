@@ -26,6 +26,19 @@
  *   "...Q",
  *   ".Q.."]
  * ]
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (H) N-Queens II
  */
 
 /**

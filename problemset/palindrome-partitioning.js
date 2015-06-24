@@ -18,11 +18,27 @@
  *     ["aa","b"],
  *     ["a","a","b"]
  *   ]
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (H) Palindrome Partitioning II
+ *
+ *                      (M) Word Break
  */
 
 /**
  * @param {string} s
- * @returns {string[][]}
+ * @return {string[][]}
  */
 var partition = function(s) {
 

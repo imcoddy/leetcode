@@ -9,6 +9,19 @@
  *
  *
  * The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Remove Linked List Elements
  */
 
 /**

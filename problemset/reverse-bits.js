@@ -16,6 +16,18 @@
  * Related problem: Reverse Integer
  *
  * Credits:Special thanks to @ts for adding this problem and creating all test cases.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Number of 1 Bits
  */
 
 /**

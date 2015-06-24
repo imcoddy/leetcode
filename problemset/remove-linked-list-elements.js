@@ -12,6 +12,20 @@
  *
  *
  * Credits:Special thanks to @mithmatt for adding this problem and creating all test cases.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Remove Element
+ *
+ *                      (E) Delete Node in a Linked List
  */
 
 /**

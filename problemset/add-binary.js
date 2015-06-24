@@ -12,6 +12,25 @@
  * a = "11"
  * b = "1"
  * Return "100".
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Add Two Numbers
+ *
+ *                      (M) Multiply Strings
+ *
+ *                      (E) Plus One
+ *
+ *                      (E) Add Binary
  */
 
 /**
