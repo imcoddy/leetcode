@@ -63,6 +63,45 @@ var threeSum = function(nums) {
     return result;
 };
 
+/**
+ * Memo: Sort nums first, then fix one element and use two pointer to narrow down. Skip duplicates.
+ * Complex: O(n^2)
+ * Runtime: 240ms
+ * Tests: 311 test cases passed
+ * Rank: B
+ * Updated: 2015-06-24
+ */
+var threeSum = function(nums) {
+    function sortNumber(a, b) {
+        return a - b;
+    }
+
+    nums = nums.sort(sortNumber);
+    var result = [];
+
+    for (var i = 0; i < nums.length; i++) {
+        var target = 0 - nums[i];
+        var front = i + 1;
+        var end = nums.length - 1;
+
+        while (front < end) {
+            var sum = nums[front] + nums[end];
+            if (sum < target) {
+                front++;
+            } else if (sum > target) {
+                end--;
+            } else {
+                var solution = [nums[i], nums[front], nums[end]];
+                result.push(solution);
+                while (front < i && nums[front] === solution[1]) front++;
+                while (i < end && nums[end] === solution[2]) end--;
+            }
+            while (i + 1 < nums.length && nums[i + 1] === nums[i]) i++;
+        }
+    }
+    return result;
+};
+
 console.log(threeSum([0, 0, 0]));
 console.log(threeSum([-1, -1, -4]));
 console.log(threeSum([1, 2, -2, -1]));
