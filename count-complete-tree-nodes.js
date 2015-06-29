@@ -77,6 +77,58 @@ var countNodes = function(root) {
     return count(root);
 };
 
+/**
+ * Memo: Binary Search Solution
+ * Complex: O(logn)
+ * Runtime: 324ms
+ * Tests: 18 test cases passed
+ * Rank: B
+ * Updated: 2015-06-26
+ */
+var countNodes = function(root) {
+    function count(root) {
+        if (!root) return 0;
+        var hl = 1;
+        var hr = 1;
+        var node = root;
+        while (node = node.left) hl++;
+        node = root;
+        while (node = node.right) hr++;
+        if (hl === hr) {
+            return Math.pow(2, hl) - 1;
+        } else {
+            return count(root.left) + count(root.right) + 1;
+        }
+    }
+    return count(root);
+};
+
+/**
+ * Memo: Improve version
+ * Complex: O(log*logn)
+ * Runtime: 276ms
+ * Tests: 18 test cases passed
+ * Rank: S
+ * Updated: 2015-06-27
+ */
+var countNodes = function(root) {
+    function count(root) {
+        if (!root) return 0;
+        var hl = 1;
+        var hr = 1;
+        var nl = root.left;
+        var nr = root.right;
+        while (nr) {
+            nl = nl.left;
+            nr = nr.right;
+            hl++;
+            hr++;
+        }
+        return nl === null ? Math.pow(2, hl) - 1 : count(root.left) + count(root.right) + 1;
+    }
+    return count(root);
+};
+
 
 var util = require("./util.js");
 var should = require('should');
