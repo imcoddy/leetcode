@@ -35,20 +35,6 @@
  *
  * All words have the same length.
  * All words contain only lowercase alphabetic characters.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *                   Show Similar Problems
- *
- *
- *                      (M) Word Ladder
  */
 
 /**

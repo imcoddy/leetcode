@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/word-ladder/
- * Tags:    [Breadth-first Search]
+ * Tags:    []
  * Level:   Medium
  * Title:   Word Ladder
  * Auther:  @imcoddy
@@ -31,20 +31,6 @@
  * Return 0 if there is no such transformation sequence.
  * All words have the same length.
  * All words contain only lowercase alphabetic characters.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *                   Show Similar Problems
- *
- *
- *                      (H) Word Ladder II
  */
 
 /**
