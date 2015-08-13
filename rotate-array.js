@@ -86,22 +86,16 @@ var rotate = function(nums, k) {
 /**
  * Memo: Rotate the array to right k times
  * Complex: O(n)
- * Runtime: 272ms
+ * Runtime: 252ms
  * Tests: 33 test cases passed
- * Rank: D
- * Updated: 2015-06-14
+ * Rank: C
+ * Updated: 2015-11-10
  */
 var rotate = function(nums, k) {
-    if (nums.length > 1) {
-        k = k % nums.length;
-
-        for (var i = 0; i < k; i++) {
-            var t = nums.pop();
-            nums.unshift(t);
-        }
-    }
+    if (nums.length <= 1) return;
+    k = k % nums.length;
+    for (var i = 0; i < k; i++) nums.unshift(nums.pop());
 };
-
 
 
 /**

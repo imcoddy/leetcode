@@ -13,18 +13,16 @@
  */
 
 /**
- * Memo:
+ * Memo: use a map to check if the element exists or not
  * Complex: O(n)
- * Runtime: 148ms
+ * Runtime: 132ms
  * Tests: 16 test cases passed
- * Rank: NA
+ * Rank: A
  */
 var containsDuplicate = function(nums) {
-    var map = {};
+    var map = Object.create(null);
     for (var i = 0; i < nums.length; i++) {
-        if (map[nums[i]]) {
-            return true;
-        }
+        if (map[nums[i]]) return true;
         map[nums[i]] = true;
     }
     return false;

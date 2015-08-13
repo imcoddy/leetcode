@@ -13,6 +13,14 @@
  * @param {number[]} digits
  * @return {number[]}
  */
+/**
+ * Memo:
+ * Complex: O(n)
+ * Runtime: 108ms
+ * Tests: 120 test cases passed
+ * Rank: S
+ * Updated: 2015-11-09
+ */
 var plusOne = function(digits) {
     var length = digits.length;
     var index = length - 1;
@@ -33,9 +41,33 @@ var plusOne = function(digits) {
     return digits;
 };
 
+/**
+ * Memo:
+ * Complex: O(n)
+ * Runtime: 132ms
+ * Tests: 108 test cases passed
+ * Rank: S
+ * Updated: 2015-11-10
+ */
+var plusOne = function(digits) {
+    var i = digits.length - 1;
+    digits[i] = digits[i] + 1;
+
+    while (digits[i] === 10 && i > 0) {
+        digits[--i] += 1;
+        digits[i + 1] = 0;
+    }
+
+    if (digits[0] === 10) {
+        digits[0] = 0;
+        digits.unshift(1);
+    }
+    return digits;
+};
+
 console.log(plusOne([0]));
 console.log(plusOne([1]));
 console.log(plusOne([9]));
-console.log(plusOne([19]));
-console.log(plusOne([399]));
-console.log(plusOne([9999999]));
+console.log(plusOne([1, 9]));
+console.log(plusOne([3, 9, 9]));
+console.log(plusOne([9, 9, 9, 9]));
