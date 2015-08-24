@@ -92,11 +92,9 @@ var removeElements = function(head, val) {
     var prev = dummy;
     var p = dummy.next;
     while (p) {
-        while (p && p.val === val) {
-            p = p.next;
-        }
+        while (p && p.val === val) p = p.next;
         prev.next = p;
-        if (prev.next) {
+        if (p) {
             prev = prev.next;
             p = p.next;
         }

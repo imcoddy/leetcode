@@ -139,6 +139,26 @@ var removeNthFromEnd = function(head, n) {
     return dummy.next;
 };
 
+
+/**
+ * Memo: Use fast and slow pointers and keep n nodes between them. When fast reaches the end, slow will be the element to remove its next node (if exists).
+ * Complex: O(n)
+ * Runtime: 148ms
+ * Tests: 207 test cases passed
+ * Rank: S
+ * Updated: 2015-08-20
+ */
+var removeNthFromEnd = function(head, n) {
+    var dummy = new ListNode(null);
+    dummy.next = head;
+    var fast = dummy;
+    var slow = dummy;
+    while (fast = fast.next)
+        if (--n < 0) slow = slow.next;
+    if (slow.next) slow.next = slow.next.next;
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;

@@ -110,6 +110,15 @@ var deleteDuplicates = function(head) {
     return head;
 };
 
+var deleteDuplicates = function(head) {
+    var tail = head;
+    while (tail) {
+        while (tail.next && tail.next.val === tail.val) tail.next = tail.next.next;
+        tail = tail.next;
+    }
+    return head;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;

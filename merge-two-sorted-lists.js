@@ -112,18 +112,54 @@ var mergeTwoLists = function(l1, l2) {
     return dummy.next;
 };
 
+/**
+ * Memo: Make a dummy node as head add append to its tail
+ * Complex: O(min(m, n))
+ * Runtime: 160ms
+ * Tests: 208 test cases passed
+ * Rank: S
+ * Updated: 2015-08-20
+ */
+var mergeTwoLists = function(l1, l2) {
+    var dummy = new ListNode(null);
+    var tail = dummy;
+
+    while (l1 && l2) {
+        var p;
+        if (l1.val > l2.val) {
+            p = l2.next;
+            l2.next = tail.next;
+            tail.next = l2;
+            l2 = p;
+        } else {
+            p = l1.next;
+            l1.next = tail.next;
+            tail.next = l1;
+            l1 = p;
+        }
+        tail = tail.next;
+    }
+    tail.next = l1 ? l1 : l2;
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
 }
 
+var should = require('should');
+console.time('Runtime');
+
 var l1 = util.arrayToLinkList([1, 3, 5, 7, 9]);
 var l2 = util.arrayToLinkList([2, 4, 6, 8, 10]);
 console.log(util.linkListToString(mergeTwoLists(l1, l2)));
+util.linkListToArray(mergeTwoLists(l1, l2)).should.eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 l1 = util.arrayToLinkList([1, 3, 5, 7, 9]);
 l2 = util.arrayToLinkList([12, 24, 36, 48, 60]);
 console.log(util.linkListToString(mergeTwoLists(l1, l2)));
+util.linkListToArray(mergeTwoLists(l1, l2)).should.eql([1, 3, 5, 7, 9, 12, 24, 36, 48, 60]);
 
 l1 = util.arrayToLinkList([12, 24, 36, 48, 60]);
 l2 = util.arrayToLinkList([1, 3, 5, 7, 9]);
@@ -132,3 +168,4 @@ console.log(util.linkListToString(mergeTwoLists(l1, l2)));
 l1 = util.arrayToLinkList([1, 3, 5, 7, 9, 11, 13, 25]);
 l2 = util.arrayToLinkList([12, 24, 36, 48, 60]);
 console.log(util.linkListToString(mergeTwoLists(l1, l2)));
+console.timeEnd('Runtime');

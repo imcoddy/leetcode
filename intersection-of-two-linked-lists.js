@@ -77,6 +77,33 @@ var getIntersectionNode = function(headA, headB) {
     return null;
 };
 
+var getIntersectionNode = function(headA, headB){
+    var pa = headA;
+    var pb = headB;
+    var count = 0;
+    while (pa && pb) {
+        if(pa === pb) return pa;
+
+        if (pa.next) {
+            pa = pa.next;
+        }else {
+            pa = headB;
+            count++;
+        }
+
+        if (pb.next) {
+            pb = pb.next;
+        }else {
+            pb = headA  ;
+            count++;
+        }
+        if (count>2) {
+            break;
+        }
+    }
+    return null;
+};
+
 var util = require("./util.js");
 
 function concat(list1, list2) {
