@@ -65,7 +65,7 @@ var swapPairs = function(head) {
 /**
  * Memo: Append two swapped nodes to a new list, and move pointer at two in one loop
  * Complex: O(n)
- * Runtime: 156ms
+ * Runtime: 140ms
  * Tests: 55 test cases passed
  * Rank: S
  * Updated: 2015-06-20
@@ -78,10 +78,8 @@ var swapPairs = function(head) {
     var p = head;
     while (p && p.next) {
         var next = p.next.next;
-        tail.next = p.next;
-        tail = tail.next;
-        tail.next = p;
-        tail = tail.next;
+        tail = tail.next = p.next;
+        tail = tail.next = p;
         p = next;
     }
     tail.next = p ? p : null;

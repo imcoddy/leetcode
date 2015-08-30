@@ -58,6 +58,44 @@ var addTwoNumbers = function(l1, l2) {
     return dummy.next;
 };
 
+
+/**
+ * Memo: Iterate both list and add l2 to l1 until one is finished.
+ * Complex: O(max(m, n))
+ * Runtime: 288ms
+ * Tests: 1555 test cases passed
+ * Rank: S
+ * Updated: 2015-08-30
+ */
+var addTwoNumbers = function(l1, l2) {
+    var dummy = new ListNode(null);
+    dummy.next = l1;
+    var tail = dummy;
+
+    while (l1 && l2) {
+        l1.val = l1.val + l2.val;
+        tail = l1;
+        l1 = l1.next;
+        l2 = l2.next;
+    }
+
+    if (!l1) tail.next = l2; //append to l2 if l2 is longer
+
+    tail = dummy.next;
+    while (tail) {
+        if (tail.val > 9) {
+            tail.val %= 10;
+            if (tail.next) {
+                tail.next.val += 1;
+            } else {
+                tail.next = new ListNode(1);
+            }
+        }
+        tail = tail.next;
+    }
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;

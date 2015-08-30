@@ -74,11 +74,11 @@ var partition = function(head, x) {
     var dummy2 = new ListNode(null);
     var tails = [dummy1, dummy2];
     while (head) {
-        var q = head.next;
+        var next = head.next;
+        head.next = null;
         var i = head.val < x ? 0 : 1;
         tails[i] = tails[i].next = head;
-        head.next = null;
-        head = q;
+        head = next;
     }
 
     tails[0].next = dummy2.next;

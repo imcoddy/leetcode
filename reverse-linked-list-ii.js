@@ -67,6 +67,43 @@ var reverseBetween = function(head, m, n) {
     return dummy.next;
 };
 
+
+/**
+ * Memo: Reserve the middle part then append it to original List
+ * Complex: O(n)
+ * Runtime: 132ms
+ * Tests: 44 test cases passed
+ * Rank: S
+ * Updated: 2015-08-09
+ */
+var reverseBetween = function(head, m, n) {
+    if (!head || !head.next || m === n) return head;
+
+    var dummy = new ListNode(null);
+    dummy.next = head;
+    var p = dummy;
+
+    var count = 1;
+    while (++count <= m) p = p.next; // find the previous node to break the list
+    var tail = p;
+    var next = p.next;
+    tail.next = null;
+    p = next;
+
+    var reverse = new ListNode(null);
+    var tail2 = p;
+    while (count++ <= 1 + n) {
+        next = p.next;
+        p.next = reverse.next;
+        reverse.next = p;
+        p = next;
+    }
+
+    tail.next = reverse.next;
+    tail2.next = p;
+    return dummy.next;
+};
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
@@ -75,5 +112,6 @@ var util = require("./util.js");
 var should = require('should');
 console.time('Runtime');
 util.lta(reverseBetween(util.atl([1, 2, 3, 4, 5]), 2, 4)).should.eql([1, 4, 3, 2, 5]);
+util.lta(reverseBetween(util.atl([1, 2]), 1, 2)).should.eql([2, 1]);
 
 console.timeEnd('Runtime');
