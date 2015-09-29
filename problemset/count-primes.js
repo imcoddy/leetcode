@@ -77,6 +77,26 @@
  *    }
  *    return count;
  * }
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Ugly Number
+ *
+ *                      (M) Ugly Number II
+ *
+ *                      (M) Perfect Squares
  */
 
 /**

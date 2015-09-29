@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/implement-trie-prefix-tree/
- * Tags:    [Data Structure,Trie]
+ * Tags:    [Trie,Design]
  * Level:   Medium
  * Title:   Implement Trie (Prefix Tree)
  * Auther:  @imcoddy

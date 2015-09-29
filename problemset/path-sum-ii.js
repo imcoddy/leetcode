@@ -41,6 +41,8 @@
  *
  *
  *                      (E) Path Sum
+ *
+ *                      (E) Binary Tree Paths
  */
 
 /**

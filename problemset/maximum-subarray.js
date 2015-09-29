@@ -29,6 +29,8 @@
  *                   Show Similar Problems
  *
  *
+ *                      (M) Best Time to Buy and Sell Stock
+ *
  *                      (M) Maximum Product Subarray
  */
 

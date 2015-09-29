@@ -50,6 +50,8 @@
  *                      (E) Min Stack
  *
  *                      (H) Longest Substring with At Most Two Distinct Characters
+ *
+ *                      (H) Paint House II
  */
 
 /**

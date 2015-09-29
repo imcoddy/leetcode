@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/add-and-search-word-data-structure-design/
- * Tags:    [Backtracking,Data Structure,Trie]
+ * Tags:    [Backtracking,Trie,Design]
  * Level:   Medium
  * Title:   Add and Search Word - Data structure design
  * Auther:  @imcoddy

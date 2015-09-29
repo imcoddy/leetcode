@@ -47,6 +47,8 @@
  *
  *
  *                      (M) Course Schedule
+ *
+ *                      (H) Alien Dictionary
  */
 
 /**

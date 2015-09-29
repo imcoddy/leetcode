@@ -64,6 +64,10 @@
  *                      (M) Binary Search Tree Iterator
  *
  *                      (M) Kth Smallest Element in a BST
+ *
+ *                      (H) Closest Binary Search Tree Value II
+ *
+ *                      (M) Inorder Successor in BST
  */
 
 /**

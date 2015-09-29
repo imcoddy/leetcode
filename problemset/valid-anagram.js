@@ -26,6 +26,8 @@
  *
  *
  *                      (M) Group Anagrams
+ *
+ *                      (E) Palindrome Permutation
  */
 
 /**

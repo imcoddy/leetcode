@@ -22,6 +22,10 @@
  *
  *
  *                      (M) House Robber II
+ *
+ *                      (M) Paint House
+ *
+ *                      (E) Paint Fence
  */
 
 /**

@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/lru-cache/
- * Tags:    [Data Structure]
+ * Tags:    [Design]
  * Level:   Hard
  * Title:   LRU Cache
  * Auther:  @imcoddy

@@ -32,7 +32,11 @@
  *
  *                      (M) Permutations
  *
+ *                      (M) Permutations II
+ *
  *                      (M) Permutation Sequence
+ *
+ *                      (M) Palindrome Permutation II
  */
 
 /**

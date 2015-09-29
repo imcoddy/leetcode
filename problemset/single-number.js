@@ -23,6 +23,12 @@
  *
  *
  *                      (M) Single Number II
+ *
+ *                      (M) Single Number III
+ *
+ *                      (M) Missing Number
+ *
+ *                      (H) Find the Duplicate Number
  */
 
 /**

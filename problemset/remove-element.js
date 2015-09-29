@@ -23,6 +23,8 @@
  *
  *
  *                      (E) Remove Linked List Elements
+ *
+ *                      (E) Move Zeroes
  */
 
 /**

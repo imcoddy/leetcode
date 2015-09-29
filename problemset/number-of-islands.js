@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/number-of-islands/
- * Tags:    [Depth-first Search,Breadth-first Search]
+ * Tags:    [Depth-first Search,Breadth-first Search,Union Find]
  * Level:   Medium
  * Title:   Number of Islands
  * Auther:  @imcoddy
@@ -27,6 +27,8 @@
  *
  *
  *                      (M) Surrounded Regions
+ *
+ *                      (M) Walls and Gates
  */
 
 /**

@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/binary-search-tree-iterator/
- * Tags:    [Tree,Stack]
+ * Tags:    [Tree,Stack,Design]
  * Level:   Medium
  * Title:   Binary Search Tree Iterator
  * Auther:  @imcoddy
@@ -26,6 +26,12 @@
  *                      (M) Binary Tree Inorder Traversal
  *
  *                      (M) Flatten 2D Vector
+ *
+ *                      (M) Zigzag Iterator
+ *
+ *                      (M) Peeking Iterator
+ *
+ *                      (M) Inorder Successor in BST
  */
 
 /**

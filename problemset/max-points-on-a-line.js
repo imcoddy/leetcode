@@ -11,7 +11,7 @@
  * Definition for a point.
  * function Point(x, y) {
  *     this.x = x;
- *     this.x = y;
+ *     this.y = y;
  * }
  */
 /**

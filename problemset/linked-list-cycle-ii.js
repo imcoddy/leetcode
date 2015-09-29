@@ -8,6 +8,9 @@
  *
  *
  *
+ * Note: Do not modify the linked list.
+ *
+ *
  * Follow up:
  * Can you solve it without using extra space?
  *
@@ -24,6 +27,8 @@
  *
  *
  *                      (M) Linked List Cycle
+ *
+ *                      (H) Find the Duplicate Number
  */
 
 /**

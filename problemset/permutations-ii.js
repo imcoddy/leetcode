@@ -1,7 +1,7 @@
 /**
  * Source:  https://leetcode.com/problems/permutations-ii/
  * Tags:    [Backtracking]
- * Level:   Hard
+ * Level:   Medium
  * Title:   Permutations II
  * Auther:  @imcoddy
  * Content: Given a collection of numbers that might contain duplicates, return all possible unique permutations.
@@ -24,7 +24,11 @@
  *                   Show Similar Problems
  *
  *
+ *                      (M) Next Permutation
+ *
  *                      (M) Permutations
+ *
+ *                      (M) Palindrome Permutation II
  */
 
 /**

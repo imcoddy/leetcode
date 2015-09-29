@@ -27,7 +27,7 @@
  *                   Show Similar Problems
  *
  *
- *                      (M) Search for a Range
+ *                      (E) First Bad Version
  */
 
 /**

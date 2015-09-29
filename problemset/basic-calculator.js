@@ -38,6 +38,8 @@
  *                      (M) Basic Calculator II
  *
  *                      (M) Different Ways to Add Parentheses
+ *
+ *                      (H) Expression Add Operators
  */
 
 /**

@@ -30,8 +30,6 @@
  *                      (M) Multiply Strings
  *
  *                      (E) Plus One
- *
- *                      (E) Add Binary
  */
 
 /**

@@ -37,6 +37,8 @@
  *                      (M) 3Sum Closest
  *
  *                      (M) 4Sum
+ *
+ *                      (M) 3Sum Smaller
  */
 
 /**

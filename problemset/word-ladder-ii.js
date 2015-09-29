@@ -4,11 +4,11 @@
  * Level:   Hard
  * Title:   Word Ladder II
  * Auther:  @imcoddy
- * Content: Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, such that:
+ * Content: Given two words (beginWord and endWord), and a dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:
  *
  *
  * Only one letter can be changed at a time
- * Each intermediate word must exist in the dictionary
+ * Each intermediate word must exist in the word list
  *
  *
  *
@@ -16,9 +16,9 @@
  *
  *
  * Given:
- * start = "hit"
- * end = "cog"
- * dict = ["hot","dot","dog","lot","log"]
+ * beginWord = "hit"
+ * endWord = "cog"
+ * wordList = ["hot","dot","dog","lot","log"]
  *
  *
  * Return
@@ -38,11 +38,13 @@
  */
 
 /**
- * @param {string} start
- * @param {string} end
- * @param {set} dict
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {Set} wordList
+ *   Note: wordList is a Set object, see:
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
  * @return {string[][]}
  */
-var findLadders = function(start, end, dict) {
+var findLadders = function(beginWord, endWord, wordList) {
 
 };

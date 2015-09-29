@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/implement-queue-using-stacks/
- * Tags:    [Stack,Data Structure]
+ * Tags:    [Stack,Design]
  * Level:   Easy
  * Title:   Implement Queue using Stacks
  * Auther:  @imcoddy

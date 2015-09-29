@@ -27,6 +27,8 @@
  *                      (H) Trapping Rain Water
  *
  *                      (M) Maximum Product Subarray
+ *
+ *                      (H) Paint House II
  */
 
 /**

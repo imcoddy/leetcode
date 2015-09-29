@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/surrounded-regions/
- * Tags:    [Breadth-first Search]
+ * Tags:    [Breadth-first Search,Union Find]
  * Level:   Medium
  * Title:   Surrounded Regions
  * Auther:  @imcoddy
@@ -41,6 +41,8 @@
  *
  *
  *                      (M) Number of Islands
+ *
+ *                      (M) Walls and Gates
  */
 
 /**

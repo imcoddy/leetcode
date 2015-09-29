@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/min-stack/
- * Tags:    [Stack,Data Structure]
+ * Tags:    [Stack,Design]
  * Level:   Easy
  * Title:   Min Stack
  * Auther:  @imcoddy

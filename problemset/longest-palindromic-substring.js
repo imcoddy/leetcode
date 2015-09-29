@@ -18,6 +18,8 @@
  *
  *
  *                      (H) Shortest Palindrome
+ *
+ *                      (E) Palindrome Permutation
  */
 
 /**

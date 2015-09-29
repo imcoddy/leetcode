@@ -15,6 +15,22 @@
  *
  *
  * Your algorithm should run in O(n) time and uses constant space.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Missing Number
+ *
+ *                      (H) Find the Duplicate Number
  */
 
 /**

@@ -19,6 +19,8 @@
  *                   Show Similar Problems
  *
  *
+ *                      (M) Maximum Subarray
+ *
  *                      (M) Best Time to Buy and Sell Stock II
  *
  *                      (H) Best Time to Buy and Sell Stock III

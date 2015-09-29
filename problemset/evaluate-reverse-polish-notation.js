@@ -31,6 +31,8 @@
  *
  *
  *                      (M) Basic Calculator
+ *
+ *                      (H) Expression Add Operators
  */
 
 /**

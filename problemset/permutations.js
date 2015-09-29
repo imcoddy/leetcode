@@ -26,7 +26,7 @@
  *
  *                      (M) Next Permutation
  *
- *                      (H) Permutations II
+ *                      (M) Permutations II
  *
  *                      (M) Permutation Sequence
  *

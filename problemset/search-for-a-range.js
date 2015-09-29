@@ -27,7 +27,7 @@
  *                   Show Similar Problems
  *
  *
- *                      (M) Search Insert Position
+ *                      (E) First Bad Version
  */
 
 /**

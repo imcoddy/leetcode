@@ -44,6 +44,8 @@
  *                      (M) Combinations
  *
  *                      (M) Combination Sum III
+ *
+ *                      (M) Factor Combinations
  */
 
 /**

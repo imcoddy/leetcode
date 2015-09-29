@@ -18,6 +18,21 @@
  *
  *
  * Credits:Special thanks to @mithmatt and @ts for adding this problem and creating all test cases.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Add Digits
+ *
+ *                      (E) Ugly Number
  */
 
 /**

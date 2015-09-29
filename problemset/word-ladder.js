@@ -4,11 +4,11 @@
  * Level:   Medium
  * Title:   Word Ladder
  * Auther:  @imcoddy
- * Content: Given two words (beginWord and endWord), and a dictionary, find the length of shortest transformation sequence from beginWord to endWord, such that:
+ * Content: Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
  *
  *
  * Only one letter can be changed at a time
- * Each intermediate word must exist in the dictionary
+ * Each intermediate word must exist in the word list
  *
  *
  *
@@ -16,9 +16,9 @@
  *
  *
  * Given:
- * start = "hit"
- * end = "cog"
- * dict = ["hot","dot","dog","lot","log"]
+ * beginWord = "hit"
+ * endWord = "cog"
+ * wordList = ["hot","dot","dog","lot","log"]
  *
  *
  * As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
@@ -36,9 +36,11 @@
 /**
  * @param {string} beginWord
  * @param {string} endWord
- * @param {set<string>} wordDict
+ * @param {Set} wordList
+ *   Note: wordList is a Set object, see:
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
  * @return {number}
  */
-var ladderLength = function(beginWord, endWord, wordDict) {
+var ladderLength = function(beginWord, endWord, wordList) {
 
 };
