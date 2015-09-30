@@ -43,10 +43,10 @@
 /**
  * Memo: Track a list with k nodes, reverse this short list and append it to result.
  * Complex: O(n)
- * Runtime: 168ms
+ * Runtime: 148ms
  * Tests: 81 test cases passed
- * Rank: S
- * Updated: 2015-06-20
+ * Rank: SS
+ * Updated: 2015-09-30
  */
 var reverseKGroup = function(head, k) {
     if (!head || k === 1) return head;
@@ -58,7 +58,7 @@ var reverseKGroup = function(head, k) {
         var count = 0;
         while (head && ++count < k) head = head.next;
 
-        if (head && count === k) {
+        if (head) {
             var next = head.next;
             head.next = null; // break from here
             tail.next = reverseList(start);
@@ -66,7 +66,6 @@ var reverseKGroup = function(head, k) {
             head = next;
         } else {
             tail.next = start;
-            break;
         }
     }
 
