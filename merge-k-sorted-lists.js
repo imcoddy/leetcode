@@ -94,33 +94,28 @@ var mergeKLists = function(lists) {
 /**
  * Memo: Improve the above by moving several nodes at one time while merging, which could reduce linking
  * Complex: O(k*n^2)
- * Runtime: 204ms
+ * Runtime: 172ms
  * Tests: 130 test cases passed
- * Rank: S
- * Updated: 2015-06-20
+ * Rank: SS
+ * Updated: 2015-09-30
  */
 var mergeKLists = function(lists) {
     var mergeTwoLists = function(l1, l2) {
-        if (!l1) return l2;
-        if (!l2) return l1;
+        if (!(l1 && l2)) return l1 || l2;
 
         var dummy = new ListNode(null);
         var tail = dummy;
         var small = l1.val <= l2.val ? l1 : l2;
-        var large = l1.val <= l2.val ? l2 : l1;
+        var large = l1 === small ? l2 : l1;
 
         while (small && large) {
             tail.next = small;
-            while (small.next && small.next.val <= large.val) {
-                small = small.next;
-            }
+            while (small.next && small.next.val <= large.val) small = small.next;
             var smallnext = small.next;
             tail = small;
             tail.next = large;
-            if (small.next) {
-                large = smallnext;
-                small = tail.next;
-            }
+            large = smallnext;
+            small = tail.next;
         }
         return dummy.next;
     };
@@ -134,6 +129,16 @@ function ListNode(val) {
     this.val = val;
     this.next = null;
 }
+
+var should = require('should');
+console.time('Runtime');
+
+util.linkListToArray(mergeKLists([util.arrayToLinkList([1, 3, 5, 7, 9])])).should.eql([1, 3, 5, 7, 9]);
+
+util.linkListToArray(mergeKLists([util.arrayToLinkList([1, 3, 5, 7, 9]), util.arrayToLinkList([2, 4, 6, 8, 10])])).should.eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+util.linkListToArray(mergeKLists([util.arrayToLinkList([1, 3, 5, 7, 9]), util.arrayToLinkList([2, 4, 6, 8, 10]), util.arrayToLinkList([2, 4])])).should.eql([1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10]);
+console.timeEnd('Runtime');
 
 console.log((mergeKLists([])));
 console.log(util.linkListToString(mergeKLists([
