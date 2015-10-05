@@ -38,6 +38,21 @@ var isSameTree = function(p, q) {
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right); // check children
 };
 
+/**
+ * Memo: Check node recursively
+ * Complex: O(n)
+ * Runtime: 120ms
+ * Tests: 54 test cases passed
+ * Rank: S
+ * Updated: 2015-10-05
+ */
+function isSameTree(p, q) {
+    if (!p && !q) return true;
+    if (!p || !q) return false;
+    if (p.val !== q.val) return false;
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+}
+
 var isSameTree = function(p, q) {
     if ((p && !q) || (!p && q)) {
         return false;
@@ -53,4 +68,4 @@ var isSameTree = function(p, q) {
     }
 };
 
-console.log(isSameTree(null,null));
+console.log(isSameTree(null, null));

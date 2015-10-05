@@ -49,6 +49,21 @@ var hasPathSum = function(root, sum) {
 };
 
 /**
+ * Memo:
+ * Complex: O(n)
+ * Runtime: 132ms
+ * Tests: 114 test cases passed
+ * Rank: S
+ * Updated: 2015-10-05
+ */
+function hasPathSum(root, sum) {
+    if (!root) return false;
+    if (!root.left && !root.right) return sum === root.val;
+    sum = sum - root.val;
+    return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
+}
+
+/**
  * Memo: if hasPathSum(root, sum) is true, then left or right will has a pathSum values sum-root.val.
  * Complex: O(n)
  * Runtime: 144ms

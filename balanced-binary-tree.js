@@ -46,17 +46,15 @@ var isBalanced = function(root) {
 /**
  * Memo: Recusive solution
  * Complex: O(nlogn)
- * Runtime: 180ms
+ * Runtime: 168ms
  * Tests: 226 test cases passed
- * Rank: B
+ * Rank: A
+ * Updated: 2015-10-05
  */
 var isBalanced = function(root) {
     if (!root) return true;
-    if (isBalanced(root.left) && isBalanced(root.right)) {
-        return Math.abs(getDepth(root.left) - getDepth(root.right)) <= 1;
-    } else {
-        return false;
-    }
+    if (isBalanced(root.left) && isBalanced(root.right)) return Math.abs(getDepth(root.left) - getDepth(root.right)) <= 1;
+    return false;
 };
 
 

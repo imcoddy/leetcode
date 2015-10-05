@@ -114,6 +114,14 @@ var isSymmetric = function(root) {
     return root ? checkLeftRight(root.left, root.right) : true;
 };
 
+
+function isSymmetric(root) {
+    function check(left, right) {
+        return (!left || !right) ? left === right : left.val === right.val && check(left.left, right.right) && check(left.right, right.left);
+    }
+    return root ? check(root.left, root.right) : true;
+}
+
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;

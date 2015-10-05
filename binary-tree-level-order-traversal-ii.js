@@ -100,16 +100,16 @@ var levelOrderBottom = function(root) {
 };
 
 /**
- * Memo:
+ * Memo: Level traversal
  * Complex: O(n)
- * Runtime: 148ms
+ * Runtime: 140ms
  * Tests: 34 test cases passed
  * Rank: A
  */
 var levelOrderBottom = function(root) {
     if (!root) return [];
 
-    var nodes = [root];
+    var nodes = [root]; // queue of nodes to traverse
     var result = [];
     var count = 1;
     while (nodes.length) {
@@ -133,21 +133,51 @@ var levelOrderBottom = function(root) {
     return result;
 };
 
+/**
+ * Memo: Inorder traversal and push nodes value to that level accordingly.
+ * Complex: O(n)
+ * Runtime: 140ms
+ * Tests: 34 test cases passed
+ * Rank: S
+ * Updated: 2015-10-05
+ */
+function levelOrderBottom(root) {
+    var result = [];
+
+    function traverse(root, depth, result) {
+        if (!root) return;
+        if (!result[depth]) result[depth] = [];
+        result[depth].push(root.val);
+        traverse(root.left, depth + 1, result);
+        traverse(root.right, depth + 1, result);
+    }
+
+    traverse(root, 0, result);
+    return result.reverse();
+}
+
 function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;
 }
-var node = new TreeNode(1);
-var root = node;
+var util = require("./util.js");
+var should = require('should');
+console.time('Runtime');
+levelOrderBottom(util.arrayToTree([1])).should.eql([
+    [1]
+]);
 
-console.log(levelOrderBottom(root));
 
-node = new TreeNode(2);
-root.right = node;
+levelOrderBottom(util.arrayToTree([1, 2, 3, 4])).should.eql([
+    [4],
+    [2, 3],
+    [1]
+]);
 
-node = new TreeNode(3);
-root.left = node;
+levelOrderBottom(util.arrayToTree([3, 9, 20, '#', '#', 15, 7])).should.eql([
+    [15, 7],
+    [9, 20],
+    [3]
+])
 
-node = new TreeNode(4);
-root.left.left = node;
-console.log(levelOrderBottom(root)); * /
+console.timeEnd('Runtime');

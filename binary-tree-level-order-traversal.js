@@ -109,9 +109,10 @@ var levelOrder = function(root) {
 /**
  * Memo:
  * Complex: O(n)
- * Runtime: 148ms
+ * Runtime: 128ms
  * Tests: 34 test cases passed
  * Rank: A
+ * Updated: 2015-10-05
  */
 var levelOrder = function(root) {
     if (!root) return [];
@@ -161,6 +162,29 @@ var levelOrder = function(root) {
     traverse(root, 0);
     return result;
 };
+
+/**
+ * Memo: Inorder traversal and push nodes value to that level accordingly.
+ * Complex: O(n)
+ * Runtime: 120ms
+ * Tests: 34 test cases passed
+ * Rank: S
+ * Updated: 2015-10-05
+ */
+function levelOrder(root) {
+    var result = [];
+
+    function traverse(root, depth, result) {
+        if (!root) return;
+        if (!result[depth]) result[depth] = [];
+        result[depth].push(root.val);
+        traverse(root.left, depth + 1, result);
+        traverse(root.right, depth + 1, result);
+    }
+
+    traverse(root, 0, result);
+    return result;
+}
 
 function TreeNode(val) {
     this.val = val;
