@@ -16,6 +16,21 @@
  * A straight forward solution using O(mn) space is probably a bad idea.
  * A simple improvement uses O(m + n) space, but still not the best solution.
  * Could you devise a constant space solution?
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (M) Game of Life
  */
 
 /**

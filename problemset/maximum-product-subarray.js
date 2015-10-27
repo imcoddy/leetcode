@@ -25,6 +25,8 @@
  *
  *                      (M) Maximum Subarray
  *
+ *                      (E) House Robber
+ *
  *                      (M) Product of Array Except Self
  */
 

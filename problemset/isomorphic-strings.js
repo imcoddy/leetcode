@@ -19,6 +19,19 @@
  *
  * Note:
  * You may assume both s and t have the same length.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *                   Show Similar Problems
+ *
+ *
+ *                      (E) Word Pattern
  */
 
 /**

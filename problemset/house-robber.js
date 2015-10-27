@@ -21,6 +21,8 @@
  *                   Show Similar Problems
  *
  *
+ *                      (M) Maximum Product Subarray
+ *
  *                      (M) House Robber II
  *
  *                      (M) Paint House
