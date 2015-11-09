@@ -35,6 +35,11 @@
  *
  * All words have the same length.
  * All words contain only lowercase alphabetic characters.
+ *
+ *
+ *
+ *
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

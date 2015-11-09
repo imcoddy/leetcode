@@ -1,6 +1,6 @@
 /**
  * Source:  https://leetcode.com/problems/word-break/
- * Tags:    [Dynamic Programming]
+ * Tags:    []
  * Level:   Medium
  * Title:   Word Break
  * Auther:  @imcoddy
@@ -17,19 +17,7 @@
  *
  *
  *
- *
- *
- *
- *
- *
- *
- *
- *                   Show Similar Problems
- *
- *
- *                      (M) Palindrome Partitioning
- *
- *                      (H) Word Break II
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

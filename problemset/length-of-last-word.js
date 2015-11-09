@@ -14,6 +14,10 @@
  * For example,
  * Given s = "Hello World",
  * return 5.
+ *
+ *
+ *
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

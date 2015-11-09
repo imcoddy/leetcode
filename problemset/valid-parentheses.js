@@ -10,6 +10,12 @@
  *
  *
  *
+ *                   Subscribe to see which companies asked this question
+ *
+ *
+ *
+ *
+ *
  *
  *
  *
@@ -23,6 +29,8 @@
  *                      (M) Generate Parentheses
  *
  *                      (H) Longest Valid Parentheses
+ *
+ *                      (M) Remove Invalid Parentheses
  */
 
 /**

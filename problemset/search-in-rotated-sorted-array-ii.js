@@ -12,6 +12,12 @@
  * Write a function to determine if a given target is in the array.
  *
  *
+ *                   Subscribe to see which companies asked this question
+ *
+ *
+ *
+ *
+ *
  *
  *
  *

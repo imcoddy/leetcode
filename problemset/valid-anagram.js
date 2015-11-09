@@ -18,6 +18,12 @@
  * What if the inputs contain unicode characters? How would you adapt your solution to such case?
  *
  *
+ *                   Subscribe to see which companies asked this question
+ *
+ *
+ *
+ *
+ *
  *
  *
  *

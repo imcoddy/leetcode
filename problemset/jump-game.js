@@ -19,6 +19,10 @@
  *
  *
  * A = [3,2,1,0,4], return false.
+ *
+ *
+ *
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

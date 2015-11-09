@@ -8,6 +8,10 @@
  *
  *
  * Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+ *
+ *
+ *
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

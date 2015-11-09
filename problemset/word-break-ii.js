@@ -23,17 +23,7 @@
  *
  *
  *
- *
- *
- *
- *
- *
- *
- *
- *                   Show Similar Problems
- *
- *
- *                      (M) Word Break
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

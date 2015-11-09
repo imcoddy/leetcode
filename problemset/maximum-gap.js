@@ -13,6 +13,9 @@
  * You may assume all elements in the array are non-negative integers and fit in the 32-bit signed integer range.
  *
  * Credits:Special thanks to @porker2008 for adding this problem and creating all test cases.
+ *
+ *
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

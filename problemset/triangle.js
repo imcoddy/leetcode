@@ -24,6 +24,10 @@
  *
  * Note:
  * Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
+ *
+ *
+ *
+ *                   Subscribe to see which companies asked this question
  */
 
 /**

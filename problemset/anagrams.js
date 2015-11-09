@@ -23,8 +23,10 @@
  *
  *
  *
- * Update (2015-08-09):
- * The signature of the function had been updated to return list<list<string>> instead of list<string>, as suggested here. If you still see your function signature return a list<string>, please click the reload button  to reset your code definition.
+ *
+ *                   Subscribe to see which companies asked this question
+ *
+ *
  *
  *
  *

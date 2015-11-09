@@ -22,6 +22,12 @@
  *
  *
  *
+ *                   Subscribe to see which companies asked this question
+ *
+ *
+ *
+ *
+ *
  *
  *
  *
@@ -33,8 +39,6 @@
  *
  *
  *                      (H) Palindrome Partitioning II
- *
- *                      (M) Word Break
  */
 
 /**

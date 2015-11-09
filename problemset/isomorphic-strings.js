@@ -21,6 +21,12 @@
  * You may assume both s and t have the same length.
  *
  *
+ *                   Subscribe to see which companies asked this question
+ *
+ *
+ *
+ *
+ *
  *
  *
  *
