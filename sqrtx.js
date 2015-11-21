@@ -24,9 +24,30 @@ var mySqrt = function(x) {
     return low;
 };
 
+/**
+ * Memo:
+ * Complex: O(logn)
+ * Runtime: 216ms
+ * Tests: 1017 test cases passed
+ * Rank: B
+ * Updated: 2015-11-19
+ */
+var mySqrt = function(x) {
+    if (x <= 0) return 0;
+
+    var start = 1;
+    var end = x;
+    while (end - start > 1) {
+        var mid = ~~((end + start) / 2);
+        mid * mid <= x ? start = mid : end = mid;
+    }
+    return start;
+};
 var should = require('should');
 console.time('Runtime');
 
+mySqrt(0).should.equal(0);
+mySqrt(1).should.equal(1);
 mySqrt(2).should.equal(1);
 mySqrt(3).should.equal(1);
 mySqrt(4).should.equal(2);
